@@ -8,6 +8,7 @@ import { APEX_20_EFFECTS } from './apex.js';
 import { OMEGA_20_EFFECTS } from './omega.js';
 import { SINGULARITY_20_EFFECTS } from './singularity.js';
 import { TITAN_30_EFFECTS } from './titan_expanded.js';
+import { APEX_STUDIO_30_EFFECTS } from './apex_studio.js';
 
 const BASE_REGISTRY: Record<string, EffectDefinition> = {
   // 1. Color Filters
@@ -365,4 +366,5 @@ export const EFFECT_REGISTRY: Record<string, EffectDefinition> = {
   ...OMEGA_20_EFFECTS,
   ...SINGULARITY_20_EFFECTS,
   ...TITAN_30_EFFECTS,
+  ...APEX_STUDIO_30_EFFECTS,
 };
