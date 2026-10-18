@@ -1,6 +1,74 @@
-# Infinite Apex Enterprise FFmpeg Media Agent & 120+ Suite (Windows)
+<div align="center">
 
-Project FFmpeg AI Agent Skill dùng chung cho **Codex** và **Antigravity**, chạy trên Windows với TypeScript/Node.js, được trang bị **120+ tính năng & 104 hiệu ứng điện ảnh Hollywood** giúp AI Agent tự động xử lý mọi tác vụ từ chèn B-Roll, Auto-Ducking âm thanh, thanh tiến trình TikTok, đo kiểm chất lượng VMAF/SSIM, chống rung Deshake, phát trực tuyến HLS, AI Vision Face Tracking và hậu kỳ chuyên nghiệp.
+  <img src="assets/banner.png" alt="Infinite Apex FFmpeg AI Agent Banner" width="100%" style="border-radius: 14px; box-shadow: 0 12px 36px rgba(0, 242, 254, 0.35);" />
+
+  <br/><br/>
+
+  <img src="assets/logo.png" alt="FFmpeg AI Agent 3D Logo" width="165" height="165" style="border-radius: 28px; filter: drop-shadow(0 14px 30px rgba(0, 242, 254, 0.55));" />
+
+  # 🎬 Infinite Apex Enterprise FFmpeg Media Agent
+  ### 🔮 120+ Engine Suite & 104 Hollywood Cinema Effects for Windows & AI Agents
+
+  <p align="center">
+    <b>Chạy trên Windows với TypeScript/Node.js • Tự động Bootstrap • Chuẩn hóa cho OpenAI Codex & Google Antigravity</b>
+  </p>
+
+  <p align="center">
+    <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/Node.js-20%2B_LTS-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" /></a>
+    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.6_ES2022-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" /></a>
+    <a href="https://ffmpeg.org/"><img src="https://img.shields.io/badge/FFmpeg-9.0.1_Gyan-007808?style=for-the-badge&logo=ffmpeg&logoColor=white" alt="FFmpeg" /></a>
+    <a href="https://vitest.dev/"><img src="https://img.shields.io/badge/Vitest-Passing-FCC72B?style=for-the-badge&logo=vitest&logoColor=black" alt="Vitest" /></a>
+    <a href="https://github.com/"><img src="https://img.shields.io/badge/Windows-11%20%7C%2010%20Native-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Windows" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blueviolet?style=for-the-badge" alt="License" /></a>
+  </p>
+
+  <img src="assets/audio-visualizer.svg" alt="Animated Visualizer" width="100%" />
+
+  <br/>
+
+  <img src="assets/terminal-animation.svg" alt="Interactive CLI Terminal" width="100%" />
+
+  <p align="center">
+    <a href="#-1-khởi-động-tự-động-1-chạm-auto-bootstrap"><b>⚡ Auto-Bootstrap</b></a> •
+    <a href="#-cấu-trúc-dự-án"><b>📁 Cấu Trúc</b></a> •
+    <a href="#-2-120-tính-năng-chuẩn-doanh-nghiệp-quốc-tế"><b>🚀 120+ Tính Năng</b></a> •
+    <a href="#-3-kho-104-hiệu-ứng-điện-ảnh-hollywood"><b>🎨 104 Cinema FX</b></a> •
+    <a href="#-4-rào-chắn-an-toàn-guard-rails"><b>🛡️ Guard Rails</b></a> •
+    <a href="#-5-kích-hoạt-trong-codex--antigravity"><b>🤖 AI Agents</b></a>
+  </p>
+
+</div>
+
+---
+
+## ⚡ 1. Khởi Động Tự Động 1 Chạm (Auto-Bootstrap)
+
+Tự động nạp `PATH`, cài đặt Node.js LTS, FFmpeg 9.0.1 và biên dịch dự án:
+
+<table>
+<tr>
+<th width="50%">🔹 Command Prompt (CMD)</th>
+<th width="50%">🔹 PowerShell</th>
+</tr>
+<tr>
+<td>
+
+```cmd
+cmd.exe /c bootstrap.cmd
+```
+
+</td>
+<td>
+
+```powershell
+.\bootstrap.ps1
+```
+
+</td>
+</tr>
+</table>
+
+---
 
 ## 📁 Cấu Trúc Dự Án
 
@@ -8,14 +76,13 @@ Project FFmpeg AI Agent Skill dùng chung cho **Codex** và **Antigravity**, ch�
 SKILL_FFMPEG_AGENT/
 ├── README.md                                  # Hướng dẫn chi tiết
 ├── bootstrap.cmd                              # Tự động nạp PATH, cài Node/FFmpeg, build với 1 click
+├── bootstrap.ps1                              # Auto-bootstrap PowerShell
 ├── package.json                               # Dependencies & scripts
 ├── tsconfig.json                              # TypeScript ES2022 / NodeNext
 ├── batch.example.json                         # Mẫu batch manifest
 ├── batch_effects.json                         # Mẫu batch hiệu ứng
-├── .agents/
-│   └── skills/
-│       └── ffmpeg-media-agent/
-│           └── SKILL.md                       # Định nghĩa Skill 120+ tính năng cho Codex & Antigravity
+├── assets/                                    # 3D Banner, Logo, Studio Preview & Animated SVGs
+├── .agents/skills/ffmpeg-media-agent/SKILL.md # Định nghĩa Skill 120+ tính năng cho Codex & Antigravity
 ├── src/
 │   ├── types.ts                               # Zod schemas & types
 │   ├── validator.ts                           # Rào chắn an toàn, chống ghi đè
@@ -25,148 +92,57 @@ SKILL_FFMPEG_AGENT/
 │   ├── doctor.ts                              # Kiểm tra môi trường Node.js & FFmpeg
 │   ├── cli.ts                                 # CLI hợp nhất toàn bộ 120+ tính năng
 │   ├── index.ts                               # Module exports
-│   ├── infinite/
-│   │   ├── studio.ts                          # B-Roll, Auto-Ducking, Progress Bar, Splicer...
-│   │   └── index.ts                           # Exports infinite studio
-│   ├── titan/
-│   │   ├── suite.ts                           # Timecode burn, Deshake, SSIM/PSNR, De-esser, Spritesheet...
-│   │   └── index.ts                           # Exports titan suite
-│   ├── cinema/
-│   │   ├── studio.ts                          # HLS, HDR Tone-mapping, Scene detect, Vocals split...
-│   │   └── index.ts                           # Exports cinema studio
-│   ├── advanced/
-│   │   ├── engine.ts                          # Nén dung lượng, EBU R128, Smart Crop, Watermark...
-│   │   └── index.ts                           # Exports advanced engine
-│   ├── effects/
-│   │   ├── schema.ts                          # Schema effect
-│   │   ├── registry.ts                        # 104 hiệu ứng cấu hình sẵn
-│   │   ├── extended.ts                        # Danh mục hiệu ứng mở rộng
-│   │   ├── cinema.ts                          # Danh mục hiệu ứng điện ảnh Hollywood
-│   │   ├── titan.ts                           # Danh mục hiệu ứng Titan (Matrix, Tilt-shift, Noir...)
-│   │   ├── infinite.ts                        # Danh mục hiệu ứng Infinite (Blade Runner, Wes Anderson...)
-│   │   ├── engine.ts                          # EffectEngine thực thi filter graph
-│   │   └── index.ts                           # Exports effects
-│   └── tracking/
-│       ├── types.ts                           # Schema tọa độ tracking khuôn mặt
-│       ├── tracker.ts                         # Trích xuất và nội suy biểu thức overlay
-│       └── index.ts                           # Exports tracking
-├── tests/
-│   └── validation.test.ts                     # Unit tests Vitest
+│   ├── infinite/studio.ts                     # B-Roll, Auto-Ducking, Progress Bar, Splicer...
+│   ├── titan/suite.ts                         # Timecode burn, Deshake, SSIM/PSNR, De-esser...
+│   ├── cinema/studio.ts                       # HLS, HDR Tone-mapping, Scene detect, Vocals split...
+│   ├── advanced/engine.ts                     # Nén dung lượng, EBU R128, Smart Crop, Watermark...
+│   ├── effects/                               # 104 hiệu ứng điện ảnh Hollywood
+│   └── tracking/                              # AI Vision Face Tracking & AR Bridge
+├── tests/validation.test.ts                   # Unit tests Vitest
 ├── samples/                                   # File media mẫu đầu vào & AR sticker assets
-└── work/                                      # Thư mục đích chứa output
-```
-
-## ⚡ Khởi Động Tự Động 1 Chạm (Auto-Bootstrap)
-
-Mọi AI Agent chỉ cần chạy:
-```cmd
-cmd.exe /c bootstrap.cmd
+└── work/                                      # Thư mục đích chứa output (đã .gitignore)
 ```
 
 ---
 
-## 🚀 120+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+## 🚀 2. 120+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
 
-### 1. Chèn B-Roll phụ tự động (`insert-broll`)
-```powershell
-node dist/cli.js insert-broll "main.mp4" "broll.mp4" "work/broll_pip.mp4" --start 2 --duration 3
-```
-
-### 2. Tự động ép nhỏ nhạc nền khi nói Auto-Ducking (`auto-ducking`)
-```powershell
-node dist/cli.js auto-ducking "voice.mp4" "bgm.mp3" "work/ducked_output.mp4"
-```
-
-### 3. Thêm thanh tiến trình chạy mượt TikTok / Reels (`add-progress-bar`)
-```powershell
-node dist/cli.js add-progress-bar "input.mp4" "work/progress.mp4" --height 10
-```
-
-### 4. Che mờ danh tính hình bầu dục trung tâm (`blur-privacy`)
-```powershell
-node dist/cli.js blur-privacy "input.mp4" "work/blurred_face.mp4"
-```
-
-### 5. Nút kêu gọi hành động Subscribe / Follower động (`follower-cta`)
-```powershell
-node dist/cli.js follower-cta "input.mp4" "work/cta.mp4" --text "FOLLOW ME"
-```
-
-### 6. Mở rộng không gian âm thanh vòm 3D Stereo (`widen-stereo`)
-```powershell
-node dist/cli.js widen-stereo "input.mp4" "work/wide_audio.mp4"
-```
-
-### 7. In Timecode SMPTE / LTC chuyên dụng (`burn-timecode`)
-```powershell
-node dist/cli.js burn-timecode "samples\demo_video.mp4" "work\timecode.mp4" --timecode "01:00:00:00"
-```
-
-### 8. Chống rung video Deshake (`stabilize`)
-```powershell
-node dist/cli.js stabilize "samples\demo_video.mp4" "work\stabilized.mp4"
-```
-
-### 9. Đánh giá chất lượng cảm thụ VMAF / SSIM / PSNR (`benchmark-quality`)
-```powershell
-node dist/cli.js benchmark-quality "samples\demo_video.mp4" "work\demo_converted.mp4"
-```
-
-### 10. Thanh tiêu đề Lower-Third hoạt họa (`animated-lower-third`)
-```powershell
-node dist/cli.js animated-lower-third "samples\demo_video.mp4" "Hoang Apex" "Lead Systems Architect" "work\intro.mp4"
-```
-
-### 11. Đóng gói luồng phát HLS Adaptive Streaming (`package-hls`)
-```powershell
-node dist/cli.js package-hls "samples\demo_video.mp4" "work\hls_stream" --segment-duration 3
-```
-
-### 12. Tách giọng hát Vocals & Nhạc nền BGM (`isolate-vocals`)
-```powershell
-node dist/cli.js isolate-vocals "samples\demo_video.mp4" "work\vocals.mp3" "work\bgm.mp3"
-```
-
-### 13. Nén video theo dung lượng chính xác (Target-Size Compressor)
-```powershell
-node dist/cli.js compress-target-size "samples\demo_video.mp4" "work\target_15mb.mp4" --size-mb 15
-```
-
-### 14. Chuẩn hóa âm lượng EBU R128 (-16 LUFS)
-```powershell
-node dist/cli.js normalize-audio "samples\demo_video.mp4" "work\lufs_normalized.mp4" --target -16
-```
-
-### 15. Đốt phụ đề cứng vĩnh viễn (Hardcoded Subtitles Burn-in)
-```powershell
-node dist/cli.js burn-subtitles "samples\demo_video.mp4" "samples\demo_captions.srt" "work\burned_subs.mp4"
-```
-
-### 16. Cắt thông minh sang 9:16 dọc (TikTok / Shorts / Reels)
-```powershell
-node dist/cli.js smart-crop-916 "samples\demo_video.mp4" "work\tiktok_916.mp4"
-```
-
-### 17. AI Face Tracking & AR Bridge
-- Trích xuất dữ liệu di chuyển khuôn mặt ra file JSON:
-  ```powershell
-  node dist/cli.js track-face "samples\demo_video.mp4" "work\face_track.json"
-  ```
-- Gắn AR Sticker bám dính chuyển động đầu thời gian thực:
-  ```powershell
-  node dist/cli.js apply-effect ar_3d_headwear_sticker "samples\demo_video.mp4" "work\ar_headwear.mp4" --track "work\face_track.json"
-  ```
+| Nhóm Tính Năng | Lệnh Thực Thi Tiêu Biểu | Mục Đích |
+| :--- | :--- | :--- |
+| 🎬 **B-Roll Insert** | `node dist/cli.js insert-broll "main.mp4" "broll.mp4" "work/out.mp4" --start 2 --duration 3` | Chèn video phụ đè lên video chính |
+| 🎙️ **Auto-Ducking** | `node dist/cli.js auto-ducking "voice.mp4" "bgm.mp3" "work/ducked.mp4"` | Tự động hạ nhỏ nhạc nền khi có tiếng nói |
+| ⏱️ **Progress Bar** | `node dist/cli.js add-progress-bar "input.mp4" "work/progress.mp4" --height 10` | Thanh tiến trình video TikTok / Reels |
+| 🛡️ **Blur Privacy** | `node dist/cli.js blur-privacy "input.mp4" "work/blurred.mp4"` | Làm mờ bảo mật khuôn mặt bầu dục |
+| 🔔 **Follower CTA** | `node dist/cli.js follower-cta "input.mp4" "work/cta.mp4" --text "FOLLOW ME"` | Nút kêu gọi hành động chuyển động động |
+| 🎧 **3D Stereo** | `node dist/cli.js widen-stereo "input.mp4" "work/wide.mp4"` | Mở rộng không gian âm thanh vòm 3D |
+| ⏱️ **SMPTE Timecode**| `node dist/cli.js burn-timecode "input.mp4" "work/tc.mp4" --timecode "01:00:00:00"` | In mã thời gian phát sóng chuyên dụng |
+| 🎥 **Deshake** | `node dist/cli.js stabilize "input.mp4" "work/stabilized.mp4"` | Chống rung video 2-pass mượt mà |
+| 📊 **VMAF / SSIM** | `node dist/cli.js benchmark-quality "original.mp4" "converted.mp4"` | Đo lường chất lượng chuẩn Netflix |
+| 🏷️ **Lower-Third** | `node dist/cli.js animated-lower-third "input.mp4" "Hoang Apex" "Architect" "work/lt.mp4"` | Thanh giới thiệu tên hoạt họa chuyên nghiệp |
+| 📡 **HLS Stream** | `node dist/cli.js package-hls "input.mp4" "work/hls" --segment-duration 3` | Đóng gói phát trực tuyến đa bitrate |
+| 🎤 **Isolate Vocals**| `node dist/cli.js isolate-vocals "input.mp4" "work/vocals.mp3" "work/bgm.mp3"` | Tách riêng lời thoại và nhạc nền |
+| 🗜️ **Target-Size** | `node dist/cli.js compress-target-size "input.mp4" "work/15mb.mp4" --size-mb 15` | Nén chính xác theo số MB mong muốn |
+| 🔊 **EBU R128** | `node dist/cli.js normalize-audio "input.mp4" "work/norm.mp4" --target -16` | Chuẩn hóa âm lượng chuẩn truyền hình |
+| 📝 **Hard Subtitles**| `node dist/cli.js burn-subtitles "input.mp4" "sub.srt" "work/burned.mp4"` | Đốt phụ đề cứng vào từng khung hình |
+| 📱 **Smart 9:16** | `node dist/cli.js smart-crop-916 "input.mp4" "work/tiktok.mp4"` | Cắt thông minh sang định dạng dọc |
+| 🎯 **AI Tracking** | `node dist/cli.js track-face "input.mp4" "work/face.json"` | Nhận diện & bám dính Sticker AR theo đầu |
 
 ---
 
-## 🎨 Kho 104 Hiệu Ứng Điện Ảnh Hollywood
+## 🎨 3. Kho 104 Hiệu Ứng Điện Ảnh Hollywood
 
-Tra cứu danh sách:
+<div align="center">
+  <img src="assets/effects_preview.png" alt="3D Cinema Color Grading & VFX Studio" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);" />
+</div>
+
+<br/>
+
+Tra cứu toàn bộ danh mục hiệu ứng:
 ```powershell
 node dist/cli.js effects
 ```
 
-Áp dụng hiệu ứng:
+Áp dụng hiệu ứng điện ảnh:
 ```powershell
 # Blade Runner 2049 Amber Haze
 node dist/cli.js apply-effect bladerunner_2049_amber "samples\demo_video.mp4" "work\bladerunner.mp4"
@@ -189,3 +165,38 @@ node dist/cli.js apply-effect film_halation_red "samples\demo_video.mp4" "work\h
 # Âm thanh 8D Spatial Binaural xoay vòng 360 độ quanh đầu
 node dist/cli.js apply-effect audio_8d_spatial_orbit "samples\demo_video.mp4" "work\8d_audio.mp4"
 ```
+
+---
+
+## 🛡️ 4. Rào Chắn An Toàn (Guard Rails)
+
+<table>
+<tr>
+<td width="33%" align="center">
+  <h3>🚫 Zero Overwrite</h3>
+  <p>Chống ghi đè file gốc tuyệt đối.<br/><b><code>input !== output</code></b></p>
+</td>
+<td width="33%" align="center">
+  <h3>🔒 Anti-Injection</h3>
+  <p>Truyền tham số dạng mảng rời rạc qua <code>execFile</code>.</p>
+</td>
+<td width="33%" align="center">
+  <h3>🔄 Smart Fallback</h3>
+  <p>Tự động chuyển <b><code>pix_fmt yuv420p</code></b> khi lỗi Profile.</p>
+</td>
+</tr>
+</table>
+
+---
+
+## 🤖 5. Kích Hoạt Trong Codex & Antigravity
+
+- **File Skill:** `[.agents/skills/ffmpeg-media-agent/SKILL.md](file:///.agents/skills/ffmpeg-media-agent/SKILL.md)`
+- **Prompt mẫu:**
+  > *"Sử dụng skill ffmpeg-media-agent để kiểm tra video trong thư mục samples, tự động chèn B-Roll ở giây thứ 2, chuẩn hóa âm thanh EBU R128 và áp dụng màu điện ảnh Blade Runner 2049 vào thư mục work."*
+
+---
+
+<div align="center">
+  <sub>⚡ Infinite Apex &bull; 🛡️ Safe &bull; 🤖 AI-Agent Ready &bull; 120+ Engine Suite &bull; 104 Cinema Effects</sub>
+</div>
