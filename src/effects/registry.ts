@@ -11,6 +11,7 @@ import { TITAN_30_EFFECTS } from './titan_expanded.js';
 import { APEX_STUDIO_30_EFFECTS } from './apex_studio.js';
 import { CHRONOS_30_EFFECTS } from './chronos.js';
 import { VALKYRIE_30_EFFECTS } from './valkyrie.js';
+import { ECLIPSE_30_EFFECTS } from './eclipse.js';
 
 const BASE_REGISTRY: Record<string, EffectDefinition> = {
   // 1. Color Filters
@@ -371,4 +372,5 @@ export const EFFECT_REGISTRY: Record<string, EffectDefinition> = {
   ...APEX_STUDIO_30_EFFECTS,
   ...CHRONOS_30_EFFECTS,
   ...VALKYRIE_30_EFFECTS,
+  ...ECLIPSE_30_EFFECTS,
 };
