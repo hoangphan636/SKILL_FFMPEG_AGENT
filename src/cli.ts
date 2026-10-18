@@ -8,14 +8,15 @@ import { AdvancedMediaEngine } from './advanced/engine.js';
 import { ApexCinemaStudio } from './cinema/studio.js';
 import { EnterpriseTitanSuite } from './titan/suite.js';
 import { InfiniteApexStudio } from './infinite/studio.js';
+import { QuantumMediaSuite } from './quantum/suite.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
 
 program
   .name('ffmpeg-agent')
-  .description('Infinite Apex Enterprise FFmpeg Media Agent & 120+ Suite on Windows')
-  .version('6.0.0');
+  .description('Omni Apex Enterprise FFmpeg Media Agent & 150+ Suite on Windows')
+  .version('7.0.0');
 
 // --- 1. CORE WORKFLOWS ---
 program
@@ -32,7 +33,7 @@ program
   });
 
 program
-  .command('convert <input> <output>')
+  .command('convert [options] <input> <output>')
   .description('Convert video to H.264/AAC MP4')
   .option('--crf <number>', 'CRF quality factor (default: 23)', (val) => parseInt(val, 10), 23)
   .option('--preset <string>', 'FFmpeg preset (ultrafast, medium, slow, etc.)', 'medium')
@@ -47,7 +48,7 @@ program
   });
 
 program
-  .command('trim <input> <output>')
+  .command('trim [options] <input> <output>')
   .description('Trim media file')
   .option('--start <time>', 'Start offset (e.g. 00:00:05)', '00:00:00')
   .option('--duration <time>', 'Duration length (e.g. 00:00:10)')
@@ -63,7 +64,7 @@ program
   });
 
 program
-  .command('extract-audio <input> <output>')
+  .command('extract-audio [options] <input> <output>')
   .description('Extract audio stream without re-encoding video')
   .option('--bitrate <bitrate>', 'Audio bitrate (e.g. 192k)')
   .action(async (input: string, output: string, options: { bitrate?: string }) => {
@@ -77,7 +78,7 @@ program
   });
 
 program
-  .command('thumbnail <input> <output>')
+  .command('thumbnail [options] <input> <output>')
   .description('Extract a single frame thumbnail at specific timestamp')
   .option('--at <time>', 'Timestamp (e.g. 00:00:02)', '00:00:01')
   .action(async (input: string, output: string, options: { at: string }) => {
@@ -91,7 +92,7 @@ program
   });
 
 program
-  .command('mux-subs <input> <output>')
+  .command('mux-subs [options] <input> <output>')
   .description('Mux subtitle track into media container (MKV/MP4)')
   .requiredOption('--subtitles <path>', 'Path to SRT subtitle file')
   .action(async (input: string, output: string, options: { subtitles: string }) => {
@@ -106,7 +107,7 @@ program
 
 // --- 2. ADVANCED PROFESSIONAL SUITE ---
 program
-  .command('compress-target-size <input> <output>')
+  .command('compress-target-size [options] <input> <output>')
   .description('Compress video to fit strictly under target Megabytes (e.g. 20MB for Discord/Email)')
   .requiredOption('--size-mb <number>', 'Target size in Megabytes', (val) => parseFloat(val))
   .action(async (input: string, output: string, options: { sizeMb: number }) => {
@@ -120,7 +121,7 @@ program
   });
 
 program
-  .command('normalize-audio <input> <output>')
+  .command('normalize-audio [options] <input> <output>')
   .description('Normalize audio volume to broadcast standard EBU R128 (-16 LUFS for podcasts/TikTok)')
   .option('--target <number>', 'Target LUFS (default: -16)', (val) => parseFloat(val), -16)
   .action(async (input: string, output: string, options: { target: number }) => {
@@ -160,7 +161,7 @@ program
   });
 
 program
-  .command('create-gif <input> <output>')
+  .command('create-gif [options] <input> <output>')
   .description('Generate high-quality optimized animated GIF with two-pass palettegen')
   .option('--fps <number>', 'GIF frame rate', (val) => parseInt(val, 10), 15)
   .option('--width <number>', 'Output GIF width in pixels', (val) => parseInt(val, 10), 480)
@@ -177,7 +178,7 @@ program
   });
 
 program
-  .command('visualizer <audioInput> <output>')
+  .command('visualizer [options] <audioInput> <output>')
   .description('Generate audio waveform visualization video from audio track')
   .option('--mode <mode>', 'Visualizer mode (waves or bars)', 'waves')
   .action(async (audioInput: string, output: string, options: { mode: 'waves' | 'bars' }) => {
@@ -191,7 +192,7 @@ program
   });
 
 program
-  .command('watermark <input> <logoImage> <output>')
+  .command('watermark [options] <input> <logoImage> <output>')
   .description('Overlay brand watermark/logo onto video')
   .option('--position <pos>', 'Corner (top-left, top-right, bottom-left, bottom-right)', 'bottom-right')
   .option('--opacity <number>', 'Logo opacity 0.1 to 1.0', (val) => parseFloat(val), 0.8)
@@ -248,7 +249,7 @@ program
 
 // --- 3. APEX CINEMA & BROADCAST STUDIO ---
 program
-  .command('package-hls <input> <outputDir>')
+  .command('package-hls [options] <input> <outputDir>')
   .description('Package video into adaptive HTTP Live Streaming (HLS m3u8 + ts segments)')
   .option('--segment-duration <number>', 'Segment duration in seconds', (v) => parseFloat(v), 4)
   .action(async (input: string, outputDir: string, options: { segmentDuration: number }) => {
@@ -262,7 +263,7 @@ program
   });
 
 program
-  .command('detect-scenes <input>')
+  .command('detect-scenes [options] <input>')
   .description('Detect cinematic scene cuts and shot transitions with timestamp scores')
   .option('--threshold <number>', 'Scene cut sensitivity 0.1 to 1.0', (v) => parseFloat(v), 0.35)
   .action(async (input: string, options: { threshold: number }) => {
@@ -277,7 +278,7 @@ program
   });
 
 program
-  .command('contact-sheet <input> <outputImage>')
+  .command('contact-sheet [options] <input> <outputImage>')
   .description('Generate filmstrip contact sheet preview storyboard grid')
   .option('--cols <number>', 'Grid columns', (v) => parseInt(v, 10), 4)
   .option('--rows <number>', 'Grid rows', (v) => parseInt(v, 10), 3)
@@ -305,7 +306,7 @@ program
   });
 
 program
-  .command('conform-aspect <input> <output>')
+  .command('conform-aspect [options] <input> <output>')
   .description('Conform video to broadcast standard aspect ratio with letterbox/pillarbox padding')
   .option('--ratio <aspect>', 'Target aspect ratio (16:9, 9:16, 1:1, 21:9)', '16:9')
   .action(async (input: string, output: string, options: { ratio: any }) => {
@@ -320,7 +321,7 @@ program
 
 // --- 4. ENTERPRISE TITAN SUITE ---
 program
-  .command('burn-timecode <input> <output>')
+  .command('burn-timecode [options] <input> <output>')
   .description('Burn-in SMPTE Timecode / LTC counter onto video for editorial dailies')
   .option('--timecode <tc>', 'Starting timecode (e.g. 01:00:00:00)', '01:00:00:00')
   .option('--fps <number>', 'Framerate for drop-frame/non-drop calculation', (v) => parseInt(v, 10), 30)
@@ -441,9 +442,9 @@ program
     }
   });
 
-// --- 5. INFINITE APEX SUITE (FEATURES 91-100) ---
+// --- 5. INFINITE APEX SUITE ---
 program
-  .command('insert-broll <mainVideo> <bRollVideo> <output>')
+  .command('insert-broll [options] <mainVideo> <bRollVideo> <output>')
   .description('Insert secondary B-Roll footage PIP at specific timestamp')
   .option('--start <sec>', 'Timestamp in seconds to begin B-roll', (v) => parseFloat(v), 2)
   .option('--duration <sec>', 'Duration in seconds of B-roll', (v) => parseFloat(v), 3)
@@ -474,7 +475,7 @@ program
   });
 
 program
-  .command('add-progress-bar <input> <output>')
+  .command('add-progress-bar [options] <input> <output>')
   .description('Add animated linear progress bar indicator for TikTok / Reels')
   .option('--height <px>', 'Height of bar in pixels', (v) => parseInt(v, 10), 8)
   .action(async (input: string, output: string, options: { height: number }) => {
@@ -514,7 +515,7 @@ program
   });
 
 program
-  .command('follower-cta <input> <output>')
+  .command('follower-cta [options] <input> <output>')
   .description('Overlay pop-up animated Call-To-Action (SUBSCRIBE NOW / FOLLOW)')
   .option('--text <ctaText>', 'CTA text banner', 'SUBSCRIBE NOW')
   .action(async (input: string, output: string, options: { text: string }) => {
@@ -540,7 +541,76 @@ program
     }
   });
 
-// --- 6. EFFECTS & AI TRACKING COMMANDS ---
+// --- 6. QUANTUM OMNI SUITE (FEATURES 121-130) ---
+program
+  .command('transcode-av1 [options] <input> <output>')
+  .description('Transcode video to next-gen AV1 format (libsvtav1 / libopus) with extreme compression')
+  .option('--crf <number>', 'CRF quality factor (default: 28)', (v) => parseInt(v, 10), 28)
+  .action(async (input: string, output: string, options: { crf: number }) => {
+    try {
+      const result = await QuantumMediaSuite.transcodeAV1(input, output, options.crf);
+      console.log(`[Success] Transcoded to AV1 in ${result.durationMs}ms. Output size: ${result.outputSize} bytes`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('level-voice <input> <output>')
+  .description('Apply dynamic voice leveling compressor for podcast & voiceover clarity')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await QuantumMediaSuite.levelVoiceDynamics(input, output);
+      console.log(`[Success] Leveled voice dynamics in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('scrub-wind [options] <input> <output>')
+  .description('Scrub wind noise rumble and low-end microphone thumps')
+  .option('--cutoff <hz>', 'Cutoff frequency in Hz', (v) => parseInt(v, 10), 100)
+  .action(async (input: string, output: string, options: { cutoff: number }) => {
+    try {
+      const result = await QuantumMediaSuite.scrubWindNoise(input, output, options.cutoff);
+      console.log(`[Success] Wind noise scrubbed in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('countdown [options] <input> <output>')
+  .description('Overlay dynamic numeric countdown timer (e.g. 5, 4, 3, 2, 1) in corner')
+  .option('--start-sec <number>', 'Starting countdown number', (v) => parseInt(v, 10), 5)
+  .action(async (input: string, output: string, options: { startSec: number }) => {
+    try {
+      const result = await QuantumMediaSuite.overlayCountdownTimer(input, options.startSec, output);
+      console.log(`[Success] Countdown timer overlaid in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('remux-lossless <input> <output>')
+  .description('Losslessly remux container format without re-encoding (e.g. MKV <-> MP4)')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await QuantumMediaSuite.fastLosslessRemux(input, output);
+      console.log(`[Success] Remuxed losslessly in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 7. EFFECTS & AI TRACKING COMMANDS ---
 program
   .command('effects')
   .description('List available effects in the registry')
@@ -560,7 +630,7 @@ program
   });
 
 program
-  .command('apply-effect <effectId> <input> <output>')
+  .command('apply-effect [options] <effectId> <input> <output>')
   .description('Apply a preset effect to a media file')
   .option('--sticker <path>', 'Custom AR sticker image path (PNG with transparency)')
   .option('--track <path>', 'Pre-extracted AI face landmark tracking JSON')
