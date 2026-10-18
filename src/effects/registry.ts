@@ -6,6 +6,7 @@ import { INFINITE_20_EFFECTS } from './infinite.js';
 import { QUANTUM_20_EFFECTS } from './quantum.js';
 import { APEX_20_EFFECTS } from './apex.js';
 import { OMEGA_20_EFFECTS } from './omega.js';
+import { SINGULARITY_20_EFFECTS } from './singularity.js';
 
 const BASE_REGISTRY: Record<string, EffectDefinition> = {
   // 1. Color Filters
@@ -361,4 +362,5 @@ export const EFFECT_REGISTRY: Record<string, EffectDefinition> = {
   ...QUANTUM_20_EFFECTS,
   ...APEX_20_EFFECTS,
   ...OMEGA_20_EFFECTS,
+  ...SINGULARITY_20_EFFECTS,
 };

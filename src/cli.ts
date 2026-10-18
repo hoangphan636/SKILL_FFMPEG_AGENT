@@ -11,14 +11,15 @@ import { InfiniteApexStudio } from './infinite/studio.js';
 import { QuantumMediaSuite } from './quantum/suite.js';
 import { ApexHyperMediaSuite } from './quantum/hyper.js';
 import { OmegaGenesisMediaSuite } from './quantum/omega.js';
+import { SingularityMediaSuite } from './quantum/singularity.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
 
 program
   .name('ffmpeg-agent')
-  .description('Omni Apex Enterprise FFmpeg Media Agent & 210+ Suite on Windows')
-  .version('9.0.0');
+  .description('Omni Apex Enterprise FFmpeg Media Agent & 240+ Suite on Windows')
+  .version('10.0.0');
 
 // --- 1. CORE WORKFLOWS ---
 program
@@ -887,7 +888,141 @@ program
     }
   });
 
-// --- 9. EFFECTS & AI TRACKING COMMANDS ---
+// --- 9. SINGULARITY SUITE COMMANDS ---
+program
+  .command('inject-spatial-360 <input> <output>')
+  .description('Inject 360 VR equirectangular monoscopic spherical projection metadata')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await SingularityMediaSuite.injectSpatial360(input, output);
+      console.log(`[Success] Spatial 360 metadata injected into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('package-fmp4 <input> <output>')
+  .description('Package fragmented MP4 (fMP4) with empty moov for zero-latency streaming')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await SingularityMediaSuite.packageFragmentedMP4(input, output);
+      console.log(`[Success] Fragmented MP4 packaged into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('autotune-voice [options] <input> <output>')
+  .description('Pitch correct voice and apply auto-tune pitch modulation')
+  .option('-s, --semitones <number>', 'Pitch shift in semitones (e.g. +2, -2)', (v) => parseFloat(v), 2)
+  .action(async (input: string, output: string, options: { semitones: number }) => {
+    try {
+      const result = await SingularityMediaSuite.autoTuneVoicePitch(input, output, options.semitones);
+      console.log(`[Success] Voice auto-tuned (${options.semitones} semitones) in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('generate-ltc <input> <output>')
+  .description('Generate SMPTE Audio Linear Timecode (LTC) reference bed track')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await SingularityMediaSuite.generateLTCBed(input, output);
+      console.log(`[Success] LTC audio track generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('kaleidoscope <input> <output>')
+  .description('Render rotational mirror kaleidoscope with 4-way radial symmetry')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await SingularityMediaSuite.renderKaleidoscope(input, output);
+      console.log(`[Success] Kaleidoscope rendered in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('wow-flutter <input> <output>')
+  .description('Apply analog tape warble, wow and flutter pitch instability')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await SingularityMediaSuite.applyTapeWowFlutter(input, output);
+      console.log(`[Success] Wow & flutter tape warmth applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('motion-vectors <input> <output>')
+  .description('Visualize motion vector macroblock optical flow telemetry')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await SingularityMediaSuite.renderMotionVectorFlow(input, output);
+      console.log(`[Success] Motion vector optical flow visualized in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('edge-sketch <input> <output>')
+  .description('Convert video into wireframe cartoon pencil edge sketch')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await SingularityMediaSuite.renderEdgeSketch(input, output);
+      console.log(`[Success] Edge sketch cartoon rendered in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('package-webm [options] <input> <output>')
+  .description('Package multi-bitrate WebM VP9/Opus for modern web browsers')
+  .option('-c, --crf <number>', 'CRF quality factor (default: 32)', (v) => parseInt(v, 10), 32)
+  .action(async (input: string, output: string, options: { crf: number }) => {
+    try {
+      const result = await SingularityMediaSuite.packageWebMVP9(input, output, options.crf);
+      console.log(`[Success] WebM VP9 packaged in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('insert-silence [options] <input> <output>')
+  .description('Insert precision silence gap padding at end of audio stream')
+  .option('-d, --duration <sec>', 'Silence duration in seconds', (v) => parseFloat(v), 2.0)
+  .action(async (input: string, output: string, options: { duration: number }) => {
+    try {
+      const result = await SingularityMediaSuite.insertAudioSilence(input, output, options.duration);
+      console.log(`[Success] Audio silence gap inserted in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 10. EFFECTS & AI TRACKING COMMANDS ---
 program
   .command('effects')
   .description('List available effects in the registry')
