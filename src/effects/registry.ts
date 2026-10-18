@@ -7,6 +7,7 @@ import { QUANTUM_20_EFFECTS } from './quantum.js';
 import { APEX_20_EFFECTS } from './apex.js';
 import { OMEGA_20_EFFECTS } from './omega.js';
 import { SINGULARITY_20_EFFECTS } from './singularity.js';
+import { TITAN_30_EFFECTS } from './titan_expanded.js';
 
 const BASE_REGISTRY: Record<string, EffectDefinition> = {
   // 1. Color Filters
@@ -363,4 +364,5 @@ export const EFFECT_REGISTRY: Record<string, EffectDefinition> = {
   ...APEX_20_EFFECTS,
   ...OMEGA_20_EFFECTS,
   ...SINGULARITY_20_EFFECTS,
+  ...TITAN_30_EFFECTS,
 };
