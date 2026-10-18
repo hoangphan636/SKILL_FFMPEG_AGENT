@@ -1,14 +1,14 @@
 ---
 name: ffmpeg-media-agent
-description: "Celestial Enterprise FFmpeg Media Agent Skill & 300+ Engine Suite on Windows with 360 VR Injection, LLM fMP4 Streaming, Voice Auto-Tune, Audio LTC Generator, Color Scopes, Tone-Mapping, 364 Cinema Effects & AI Vision Bridge."
-version: "18.0.0"
+description: "Eternity Enterprise FFmpeg Media Agent Skill & 330+ Engine Suite on Windows with 360 VR Injection, LLM fMP4 Streaming, Voice Auto-Tune, Audio LTC Generator, Color Scopes, Tone-Mapping, 364 Cinema Effects & AI Vision Bridge."
+version: "19.0.0"
 author: "Lead Staff Systems Architect"
-tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "omega-suite", "singularity-suite", "omniverse-suite", "celestial-suite", "vr360", "fmp4", "autotune", "prores"]
+tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "omega-suite", "singularity-suite", "omniverse-suite", "celestial-suite", "eternity-suite", "vr360", "fmp4", "autotune", "prores"]
 ---
 
-# Celestial Enterprise FFmpeg Media Agent Skill & Engine (v18.0)
+# Eternity Enterprise FFmpeg Media Agent Skill & Engine (v19.0)
 
-Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **300+ tính năng & 364 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio tối thượng: từ nâng cấp tần số lấy mẫu âm thanh Hi-Res SoXR, bóc tách rãnh lời thoại trung tâm và âm thanh môi trường xung quanh, khử rung màn trập lăn rolling shutter, cổng nhiễu âm học noise gate, áp dụng bảng màu 3D LUT Cube, nén động đa băng tầng multiband, triệt tiêu viền xanh phông nền despill, đến xuất Apple ProRes 422 HQ / 4444 Alpha, AV1, RTMP Live Broadcast và AI Face Tracking.
+Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **330+ tính năng & 364 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio tối thượng: từ xoay âm thanh vòm 8D Binaural 360 độ tự động, giới hạn dải màu phát sóng an toàn Broadcast-Safe IRE, hòa âm bè giọng đa quãng 5th, giả lập méo đầu từ VHS rách hình, tạo dải âm trầm phụ 20Hz rung chuyển, chống nhòe khuếch tán mơ mộng Orton Glow, điều biến tần số Robot Dalek, đến xuất Apple ProRes 422 HQ / 4444 Alpha, AV1, RTMP Live Broadcast và AI Face Tracking.
 
 ---
 
@@ -22,7 +22,39 @@ Tự động cấu hình PATH, cài đặt Node.js LTS, Gyan FFmpeg Essentials, 
 
 ---
 
-## 2. Toàn Bộ 300+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+## 2. Toàn Bộ 330+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+
+### Nhóm ℰ: Đột Phá Hậu Kỳ Vĩnh Hằng Studio (Eternity Suite)
+1. **Xoay âm thanh vòm 8D Binaural 360 độ tự động (`autopan-8d`)**: Tạo luồng âm thanh xoay tròn tuần hoàn quanh đầu người nghe qua tai nghe.
+2. **Khóa dải màu phát sóng an toàn Broadcast-Safe IRE (`broadcast-safe-colors`)**: Cắt gọt dải sáng và sắc độ theo chuẩn IRE 0-100 của đài truyền hình.
+3. **Bộ hòa âm bè giọng đa quãng 5th Harmonizer (`pitch-harmonizer`)**: Trộn thêm lớp hòa âm giọng bè cao hơn 7 semitone cực dày dặn.
+4. **Giả lập méo đầu từ VHS rách hình đáy màn hình (`vhs-head-switching`)**: Tái hiện dải nhiễu giật hạt xám đặc trưng của đầu máy VCR cổ điển.
+5. **Giả lập âm thanh ngạt dưới nước Underwater Muffle (`underwater-muffle`)**: Cắt lọc dải cao mô phỏng không gian nghe nhạc dưới hồ bơi hoặc tiệc phòng bên.
+6. **Làm nét biên viền Gaussian Unsharp Mask (`gaussian-unsharp`)**: Tăng cường viền cạnh đối tượng mà không tạo quầng sáng nhiễu hạt.
+7. **Giả lập loa phóng thanh cầm tay / còi báo động Megaphone (`megaphone-resonance`)**: Giới hạn băng thông và đẩy méo tiếng loa phát thanh khẩn cấp.
+8. **Đồ họa bóng đen đơn sắc Silhouette Poster (`silhouette-poster`)**: Chuyển đổi video sang phong cách nghệ thuật bóng đổ tương phản cực cao.
+9. **Khóa dải trầm trung tâm Mono Low Bass (`mono-low-bass`)**: Gom toàn bộ tần số dưới 120Hz về mono bảo vệ bàn cắt đĩa than và dàn loa club.
+10. **Rung lắc cơ khí máy chiếu phim nhựa Film Gate Weave (`film-gate-weave`)**: Mô phỏng sự trượt lệch cơ học vi mô của bánh răng máy chiếu 35mm.
+11. **Sóng áp suất hạ âm cực trầm 20Hz Heartbeat (`heartbeat-sub-20hz`)**: Bơm dải sóng hạ âm 20Hz tạo áp lực rung sàn rạp chiếu phim.
+12. **Phục hồi video bóp méo Anamorphic Desqueeze (`deanamorphize`)**: Kéo giãn quang học 1.33x đưa video ống kính Anamorphic về tỷ lệ thực.
+13. **Vang nhại đảo kênh Stereo Ping-Pong Delay (`ping-pong-delay`)**: Tiếng vang nhại nảy qua lại giữa tai Trái và tai Phải nhịp nhàng.
+14. **Khuếch tán ánh sáng mộng ảo Orton Diffusion Glow (`orton-diffusion-glow`)**: Tạo ánh hào quang dịu ngọt mờ ảo phong cách ảnh cưới và thần thoại.
+15. **Đảo pha âm học 180 độ triệt tiêu lệch pha (`invert-audio-phase`)**: Khắc phục hiện tượng triệt tiêu âm thanh khi thu 2 micro cùng lúc.
+16. **Khung hình TV bóng đèn cổ 4:3 Academy Retro (`retro-academy-43`)**: Đưa video về tỷ lệ truyền hình 1.33:1 hoài niệm thập niên 90.
+17. **Hiệu ứng méo cao độ hạt Granular Pitch Glitch (`pitch-glitcher`)**: Tạo độ chao đảo cao độ dồn dập phong cách glitch điện tử.
+18. **Hiệu ứng hóa chất phòng tối Sabattier Solarization (`solarize-sabattier`)**: Đảo ngược một phần ánh sáng như kỹ thuật phơi sáng đảo hóa chất phòng tối.
+19. **Trích xuất nghe độc lập kênh giữa Solo Mid Channel (`solo-mid-channel`)**: Tách riêng giọng hát và nhạc cụ trung tâm, tắt hoàn toàn tiếng vang hai bên.
+20. **Điều chỉnh nhiệt độ màu Kelvin mô phỏng ấm/lạnh (`shift-kelvin`)**: Dịch chuyển tông màu sang ánh vàng hoàng hôn hoặc xanh lạnh băng giá.
+21. **Giảm độ phân giải âm thanh 8-bit Lo-Fi Bitcrusher (`bitcrush-lofi`)**: Tái hiện chất âm máy chơi game GameBoy và Arcade thập niên 80.
+22. **Thu phóng quang học thở nhịp nhàng Optical Zoom Cycle (`optical-zoom-cycle`)**: Chu kỳ zoom ra vào hình sin nhẹ nhàng tạo nhịp thở cho cảnh quay.
+23. **Không gian âm vang giáo đường tráng lệ Cathedral Reverb (`cathedral-reverb`)**: Tái tạo không gian dội âm đa hướng của giáo đường đá khổng lồ.
+24. **Tráng phim giữ bạc Bleach Bypass Silver Retention (`bleach-bypass-silver`)**: Giữ lại tinh thể bạc cho độ tương phản sắc lạnh như phim Giải cứu binh nhì Ryan.
+25. **Tự động cân bằng âm lượng giọng nói Speech Leveler AGC (`speech-leveler-agc`)**: Giữ âm lượng phỏng vấn ổn định dù người nói nói to hay nhỏ.
+26. **Tối góc hội tụ tâm điểm Pinpoint Vignette (`pinpoint-vignette`)**: Hút trọn ánh nhìn người xem vào trung tâm bằng vùng tối biên sâu.
+27. **Điều biến tần số giọng nói Robot Dalek Ring Modulator (`ring-modulator-robot`)**: Biến giọng người thành giọng robot người ngoài hành tinh Sci-Fi.
+28. **Ghép 3 video cột dọc toàn cảnh Triple-Column Grid (`triple-column-grid`)**: Ghép 3 video smartphone dọc thành bức tranh toàn cảnh 3 góc nhìn.
+29. **Lọc triệt để tiếng ù máy lạnh sub-low 30Hz Rumble Cut (`rumble-cut-30hz`)**: Loại bỏ sạch sẽ tiếng gió ù điều hòa và tạp âm mặt đường.
+30. **Trực quan hóa vectơ chuyển động Codec Motion Vectors (`motion-vector-overlay`)**: In mũi tên vector chuyển động macroblock phân tích nén video.
 
 ### Nhóm 𝒞: Đột Phá Hậu Kỳ Thần Thánh Studio (Celestial Suite)
 1. **Nâng cấp tần số lấy mẫu Hi-Res 96kHz SoXR (`resample-audio`)**: Bộ lấy mẫu độ chính xác 28-bit chuyển đổi âm thanh chuẩn phòng thu Audiophile.

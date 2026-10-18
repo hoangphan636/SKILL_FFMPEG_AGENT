@@ -6,8 +6,8 @@
 
   <img src="assets/logo.png" alt="FFmpeg AI Agent 3D Logo" width="165" height="165" style="border-radius: 28px; filter: drop-shadow(0 14px 30px rgba(0, 242, 254, 0.55));" />
 
-  # 🎬 Celestial Enterprise FFmpeg Media Agent
-  ### 🔮 300+ Engine Suite & 364 Hollywood Cinema Effects for Windows & AI Agents
+  # 🎬 Eternity Enterprise FFmpeg Media Agent
+  ### 🔮 330+ Engine Suite & 364 Hollywood Cinema Effects for Windows & AI Agents
 
   <p align="center">
     <b>Chạy trên Windows với TypeScript/Node.js • Tự động Bootstrap • Chuẩn hóa cho OpenAI Codex & Google Antigravity</b>
@@ -31,7 +31,7 @@
   <p align="center">
     <a href="#-1-khởi-động-tự-động-1-chạm-auto-bootstrap"><b>⚡ Auto-Bootstrap</b></a> •
     <a href="#-cấu-trúc-dự-án"><b>📁 Cấu Trúc</b></a> •
-    <a href="#-2-300-tính-năng-chuẩn-doanh-nghiệp-quốc-tế"><b>🚀 300+ Tính Năng</b></a> •
+    <a href="#-2-330-tính-năng-chuẩn-doanh-nghiệp-quốc-tế"><b>🚀 330+ Tính Năng</b></a> •
     <a href="#-3-kho-364-hiệu-ứng-điện-ảnh-hollywood"><b>🎨 364 Cinema FX</b></a> •
     <a href="#-4-rào-chắn-an-toàn-guard-rails"><b>🛡️ Guard Rails</b></a> •
     <a href="#-5-kích-hoạt-trong-codex--antigravity"><b>🤖 AI Agents</b></a>
@@ -105,7 +105,7 @@ SKILL_FFMPEG_AGENT/
 
 ---
 
-## 🚀 2. 300+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+## 🚀 2. 330+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
 
 | Nhóm Tính Năng | Lệnh Thực Thi Tiêu Biểu | Mục Đích |
 | :--- | :--- | :--- |

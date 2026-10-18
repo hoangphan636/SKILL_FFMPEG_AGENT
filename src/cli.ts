@@ -14,6 +14,7 @@ import { OmegaGenesisMediaSuite } from './quantum/omega.js';
 import { SingularityMediaSuite } from './quantum/singularity.js';
 import { OmniverseMediaSuite } from './quantum/omniverse.js';
 import { CelestialMediaSuite } from './quantum/celestial.js';
+import { EternityMediaSuite } from './quantum/eternity.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
@@ -1812,6 +1813,404 @@ program
     try {
       const result = await CelestialMediaSuite.truePeakLimiter(input, output);
       console.log(`[Success] True-peak limiter applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 9.7 ETERNITY ENTERPRISE SUITE (30 FEATURES) ---
+program
+  .command('autopan-8d [options] <input> <output>')
+  .description('Rotate audio continuously around listener head in 360-degree 8D binaural field')
+  .option('-s, --speed <hz>', 'Rotation speed in Hz (default: 0.2)', (v) => parseFloat(v), 0.2)
+  .action(async (input: string, output: string, options: { speed: number }) => {
+    try {
+      const result = await EternityMediaSuite.autoPan8D(input, output, options.speed);
+      console.log(`[Success] Auto-panned 8D in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('broadcast-safe-colors <input> <output>')
+  .description('Clamp luma and chroma to IRE 0-100 broadcast legal limits')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.broadcastSafeColors(input, output);
+      console.log(`[Success] Clamped to broadcast safe gamut in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('pitch-harmonizer [options] <input> <output>')
+  .description('Generate pitch harmonizer layered on top of dry vocal (+5th interval default)')
+  .option('-s, --semitones <count>', 'Interval in semitones (default: 7)', (v) => parseInt(v, 10), 7)
+  .action(async (input: string, output: string, options: { semitones: number }) => {
+    try {
+      const result = await EternityMediaSuite.pitchHarmonizer(input, output, options.semitones);
+      console.log(`[Success] Pitch harmonizer applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('vhs-head-switching <input> <output>')
+  .description('Add authentic bottom head-switching static jitter found on analog VHS tapes')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.vhsHeadSwitching(input, output);
+      console.log(`[Success] VHS head-switching added in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('underwater-muffle [options] <input> <output>')
+  .description('Simulate muffled underwater acoustic ambiance or party next-door sound')
+  .option('-c, --cutoff <hz>', 'Lowpass cutoff in Hz (default: 450)', (v) => parseInt(v, 10), 450)
+  .action(async (input: string, output: string, options: { cutoff: number }) => {
+    try {
+      const result = await EternityMediaSuite.underwaterMuffle(input, output, options.cutoff);
+      console.log(`[Success] Underwater muffle applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('gaussian-unsharp <input> <output>')
+  .description('Crispen high-frequency details with Gaussian unsharp masking')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.gaussianUnsharp(input, output);
+      console.log(`[Success] Gaussian unsharp applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('megaphone-resonance <input> <output>')
+  .description('Simulate vintage bullhorn megaphone or emergency PA broadcast speaker')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.megaphoneResonance(input, output);
+      console.log(`[Success] Megaphone resonance applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('silhouette-poster <input> <output>')
+  .description('Transform video into stark high-contrast monochrome graphic silhouette')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.silhouettePoster(input, output);
+      console.log(`[Success] Silhouette poster created in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('mono-low-bass [options] <input> <output>')
+  .description('Collapse sub-bass frequencies below threshold to center mono for vinyl/club mastering')
+  .option('-c, --cutoff <hz>', 'Cutoff frequency in Hz (default: 120)', (v) => parseInt(v, 10), 120)
+  .action(async (input: string, output: string, options: { cutoff: number }) => {
+    try {
+      const result = await EternityMediaSuite.monoLowBass(input, output, options.cutoff);
+      console.log(`[Success] Low bass collapsed to mono in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('film-gate-weave <input> <output>')
+  .description('Simulate physical film projector mechanical gate weave jitter')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.filmGateWeave(input, output);
+      console.log(`[Success] Film gate weave applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('heartbeat-sub-20hz <input> <output>')
+  .description('Inject 20Hz infrasonic sub-bass pressure waves')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.heartbeatSub20Hz(input, output);
+      console.log(`[Success] 20Hz infrasonic sub-bass injected in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('deanamorphize [options] <input> <output>')
+  .description('De-anamorphize squeezed anamorphic footage with custom stretch ratio')
+  .option('-f, --factor <ratio>', 'Stretch ratio factor (default: 1.333)', (v) => parseFloat(v), 1.333)
+  .action(async (input: string, output: string, options: { factor: number }) => {
+    try {
+      const result = await EternityMediaSuite.deanamorphize(input, output, options.factor);
+      console.log(`[Success] De-anamorphized in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('ping-pong-delay <input> <output>')
+  .description('Stereo ping-pong echo bouncing between left and right channels')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.pingPongDelay(input, output);
+      console.log(`[Success] Ping-pong delay applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('orton-diffusion-glow <input> <output>')
+  .description('Apply classic Orton dream diffusion glow to footage')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.ortonDiffusionGlow(input, output);
+      console.log(`[Success] Orton diffusion glow applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('invert-audio-phase <input> <output>')
+  .description('Invert audio phase 180 degrees to correct acoustic comb filtering')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.invertAudioPhase(input, output);
+      console.log(`[Success] Inverted audio phase in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('retro-academy-43 <input> <output>')
+  .description('Crop and pillarbox video to vintage 4:3 Academy television format')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.retroAcademy43(input, output);
+      console.log(`[Success] Vintage 4:3 Academy frame applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('pitch-glitcher <input> <output>')
+  .description('Apply modulated granular resampling pitch wobble and glitch')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.pitchGlitcher(input, output);
+      console.log(`[Success] Pitch glitcher applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('solarize-sabattier <input> <output>')
+  .description('Apply Sabattier darkroom chemical solarization film effect')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.solarizeSabattier(input, output);
+      console.log(`[Success] Sabattier solarization applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('solo-mid-channel <input> <output>')
+  .description('Solo center mono information and mute side spatial reflections')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.soloMidChannel(input, output);
+      console.log(`[Success] Center mid channel soloed in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('shift-kelvin [options] <input> <output>')
+  .description('Shift color temperature towards warm amber or cold cobalt')
+  .option('-w, --warmth <amount>', 'Warmth shift from -0.5 (cold) to +0.5 (warm)', (v) => parseFloat(v), 0.15)
+  .action(async (input: string, output: string, options: { warmth: number }) => {
+    try {
+      const result = await EternityMediaSuite.shiftKelvin(input, output, options.warmth);
+      console.log(`[Success] Color temperature shifted in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('bitcrush-lofi <input> <output>')
+  .description('Downsample audio to authentic 11kHz 8-bit retro gaming resolution')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.bitcrushLoFi(input, output);
+      console.log(`[Success] Bitcrush downsampled in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('optical-zoom-cycle <input> <output>')
+  .description('Smooth sinusoidal breathing zoom in-out motion cycle')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.opticalZoomCycle(input, output);
+      console.log(`[Success] Breathing zoom cycle applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('cathedral-reverb <input> <output>')
+  .description('Simulate majestic stone cathedral multi-tap acoustic space')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.cathedralReverb(input, output);
+      console.log(`[Success] Cathedral reverb applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('bleach-bypass-silver <input> <output>')
+  .description('Classic high-contrast silver retention bleach bypass grade')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.bleachBypassSilver(input, output);
+      console.log(`[Success] Silver bleach bypass applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('speech-leveler-agc <input> <output>')
+  .description('Automatic Speech Leveler AGC for fluctuating interview microphones')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.speechLevelerAgc(input, output);
+      console.log(`[Success] Speech leveled in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('pinpoint-vignette <input> <output>')
+  .description('Dark dramatic vignette spotlight on center region')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.pinpointVignette(input, output);
+      console.log(`[Success] Pinpoint vignette applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('ring-modulator-robot [options] <input> <output>')
+  .description('Sci-Fi robotic Dalek voice ring modulator effect')
+  .option('-f, --frequency <hz>', 'Carrier modulation frequency in Hz (default: 250)', (v) => parseFloat(v), 250)
+  .action(async (input: string, output: string, options: { frequency: number }) => {
+    try {
+      const result = await EternityMediaSuite.ringModulatorRobot(input, output, options.frequency);
+      console.log(`[Success] Robotic ring modulator applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('triple-column-grid <inputA> <inputB> <inputC> <output>')
+  .description('Assemble 3 vertical video streams into a triple-column panoramic grid')
+  .action(async (inputA: string, inputB: string, inputC: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.tripleColumnGrid(inputA, inputB, inputC, output);
+      console.log(`[Success] Triple-column grid created in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('rumble-cut-30hz <input> <output>')
+  .description('Clean sub-low rumble, HVAC hum and air conditioner thuds below 30Hz')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.rumbleCut30Hz(input, output);
+      console.log(`[Success] Sub-low rumble cut in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('motion-vector-overlay <input> <output>')
+  .description('Overlay video codec motion vectors and macroblock prediction arrows')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EternityMediaSuite.motionVectorOverlay(input, output);
+      console.log(`[Success] Motion vectors overlayed in ${result.durationMs}ms`);
     } catch (err) {
       console.error(`[Error] ${(err as Error).message}`);
       process.exit(1);
