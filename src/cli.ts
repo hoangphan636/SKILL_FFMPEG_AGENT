@@ -6,14 +6,15 @@ import { EffectEngine } from './effects/engine.js';
 import { FaceTracker } from './tracking/tracker.js';
 import { AdvancedMediaEngine } from './advanced/engine.js';
 import { ApexCinemaStudio } from './cinema/studio.js';
+import { EnterpriseTitanSuite } from './titan/suite.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
 
 program
   .name('ffmpeg-agent')
-  .description('Apex Enterprise FFmpeg Media Agent & 60+ Engine Suite on Windows')
-  .version('4.0.0');
+  .description('Titan Enterprise FFmpeg Media Agent & 90+ Engine Suite on Windows')
+  .version('5.0.0');
 
 // --- 1. CORE WORKFLOWS ---
 program
@@ -244,7 +245,7 @@ program
     }
   });
 
-// --- 3. APEX CINEMA & BROADCAST STUDIO (FEATURES 31-40) ---
+// --- 3. APEX CINEMA & BROADCAST STUDIO ---
 program
   .command('package-hls <input> <outputDir>')
   .description('Package video into adaptive HTTP Live Streaming (HLS m3u8 + ts segments)')
@@ -316,20 +317,130 @@ program
     }
   });
 
+// --- 4. ENTERPRISE TITAN SUITE (FEATURES 61-70) ---
 program
-  .command('tonemap-hdr <input> <output>')
-  .description('Tone-map 4K HDR10 / HLG wide color gamut to standard SDR Rec.709')
-  .action(async (input: string, output: string) => {
+  .command('burn-timecode <input> <output>')
+  .description('Burn-in SMPTE Timecode / LTC counter onto video for editorial dailies')
+  .option('--timecode <tc>', 'Starting timecode (e.g. 01:00:00:00)', '01:00:00:00')
+  .option('--fps <number>', 'Framerate for drop-frame/non-drop calculation', (v) => parseInt(v, 10), 30)
+  .action(async (input: string, output: string, options: { timecode: string; fps: number }) => {
     try {
-      const result = await ApexCinemaStudio.toneMapHdrToSdr(input, output);
-      console.log(`[Success] HDR tone-mapped to SDR in ${result.durationMs}ms`);
+      const result = await EnterpriseTitanSuite.burnTimecode(input, output, options);
+      console.log(`[Success] SMPTE Timecode burned into ${output} in ${result.durationMs}ms`);
     } catch (err) {
       console.error(`[Error] ${(err as Error).message}`);
       process.exit(1);
     }
   });
 
-// --- 4. EFFECTS & AI TRACKING COMMANDS ---
+program
+  .command('stabilize <input> <output>')
+  .description('Stabilize shaky handheld action footage using deshake motion vectors')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EnterpriseTitanSuite.stabilizeVideo(input, output);
+      console.log(`[Success] Footage stabilized into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('animated-lower-third <input> <text> <subtitle> <output>')
+  .description('Overlay dynamic animated lower-third title card with smooth slide-in')
+  .action(async (input: string, text: string, subtitle: string, output: string) => {
+    try {
+      const result = await EnterpriseTitanSuite.overlayAnimatedLowerThird(input, text, subtitle, output);
+      console.log(`[Success] Animated lower-third applied into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('limit-audio <input> <output>')
+  .description('Apply studio broadcast audio brickwall limiter preventing digital clipping')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EnterpriseTitanSuite.applyBroadcastLimiter(input, output);
+      console.log(`[Success] Audio brickwall limited into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('benchmark-quality <reference> <distorted>')
+  .description('Benchmark perceptual video quality using SSIM & PSNR objective metrics')
+  .action(async (reference: string, distorted: string) => {
+    try {
+      const metrics = await EnterpriseTitanSuite.benchmarkVideoQuality(reference, distorted);
+      console.log('--- Video Quality Benchmark Report ---');
+      console.log(`PSNR Average : ${metrics.psnrAvg.toFixed(2)} dB`);
+      console.log(`SSIM Average : ${metrics.ssimAvg.toFixed(4)} (Perceptual similarity)`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('spritesheet <input> <outputPng>')
+  .description('Generate web video scrubbing thumbnail sprite sheet (10x10 tile matrix)')
+  .option('--interval <sec>', 'Seconds between thumbnail captures', (v) => parseFloat(v), 2)
+  .action(async (input: string, outputPng: string, options: { interval: number }) => {
+    try {
+      const result = await EnterpriseTitanSuite.generateThumbnailSpritesheet(input, outputPng, options.interval);
+      console.log(`[Success] Scrubbing spritesheet generated into ${outputPng} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('sanitize <input> <output>')
+  .description('Sanitize video metadata, stripping GPS coordinates, camera model and Exif privacy tags')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EnterpriseTitanSuite.sanitizeMetadata(input, output);
+      console.log(`[Success] Metadata sanitized into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('pillarbox-blur <input> <output>')
+  .description('Embed vertical portrait video onto 16:9 widescreen with dynamic blurred background')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EnterpriseTitanSuite.dynamicBlurBackgroundPillarbox(input, output);
+      console.log(`[Success] Blurred pillarbox generated into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('clean-speech <input> <output>')
+  .description('Filter vocal rumble and apply de-essing speech EQ')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await EnterpriseTitanSuite.cleanSpeechAudio(input, output);
+      console.log(`[Success] Cleaned speech audio into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 5. EFFECTS & AI TRACKING COMMANDS ---
 program
   .command('effects')
   .description('List available effects in the registry')

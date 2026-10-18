@@ -7,3 +7,4 @@ export * from './effects/index.js';
 export * from './tracking/index.js';
 export * from './advanced/index.js';
 export * from './cinema/index.js';
+export * from './titan/index.js';
