@@ -1,14 +1,14 @@
 ---
 name: ffmpeg-media-agent
-description: "Singularity Enterprise FFmpeg Media Agent Skill & 240+ Engine Suite on Windows with 360 VR Injection, LLM fMP4 Streaming, Voice Auto-Tune, Audio LTC Generator, Kaleidoscope, Wow & Flutter, Motion Vectors, WebM VP9, 364 Cinema Effects & AI Vision Bridge."
-version: "16.0.0"
+description: "Omniverse Enterprise FFmpeg Media Agent Skill & 270+ Engine Suite on Windows with 360 VR Injection, LLM fMP4 Streaming, Voice Auto-Tune, Audio LTC Generator, Color Scopes, Tone-Mapping, 364 Cinema Effects & AI Vision Bridge."
+version: "17.0.0"
 author: "Lead Staff Systems Architect"
-tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "omega-suite", "singularity-suite", "vr360", "fmp4", "autotune", "prores"]
+tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "omega-suite", "singularity-suite", "omniverse-suite", "vr360", "fmp4", "autotune", "prores"]
 ---
 
-# Singularity Enterprise FFmpeg Media Agent Skill & Engine (v16.0)
+# Omniverse Enterprise FFmpeg Media Agent Skill & Engine (v17.0)
 
-Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **240+ tính năng & 364 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio tối thượng: từ gắn thẻ không gian 360 VR Equirectangular, đóng gói fMP4 Zero-Latency cho LLM Stream, chỉnh phô giọng hát Auto-Tune, tạo rãnh âm thanh LTC Timecode, lăng kính vạn hoa đối xứng Kaleidoscope, mô phỏng méo tiếng băng từ Wow & Flutter, trực quan hóa vector chuyển động Macroblock, đóng gói WebM VP9, đến xuất Apple ProRes 422 HQ / 4444 Alpha, AV1, RTMP Live Broadcast và AI Face Tracking.
+Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **270+ tính năng & 364 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio tối thượng: từ trích xuất bảng màu thông minh, xem trước lướt nhanh pitch-compensate, đo kiểm pha âm thanh vectơ, khử rung nhấp nháy ánh sáng deflicker, phục hồi âm thanh xén ngọn declip, ánh xạ dải động cao HDR sang SDR, phát hình thẻ màu kiểm định SMPTE, trộn âm vòm 5.1, gắn dải quang sai thấu kính, đo kiểm biểu đồ sóng waveform RGB, đến xuất Apple ProRes 422 HQ / 4444 Alpha, AV1, RTMP Live Broadcast và AI Face Tracking.
 
 ---
 
@@ -22,7 +22,39 @@ Tự động cấu hình PATH, cài đặt Node.js LTS, Gyan FFmpeg Essentials, 
 
 ---
 
-## 2. Toàn Bộ 240+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+## 2. Toàn Bộ 270+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+
+### Nhóm 𝒪: Đột Phá Hậu Kỳ Vô Cực Studio (Omniverse Suite)
+1. **Trích xuất bảng màu điện ảnh 32 màu Palette (`extract-palette`)**: Tạo bảng mã màu visual palette PNG để đối chiếu color grading.
+2. **Xem trước lướt nhanh bù trừ cao độ 2x Scrub Preview (`scrub-preview`)**: Tăng tốc 2x/3x không biến dạng giọng nói để AI duyệt nhanh cảnh quay.
+3. **Đo kiểm tương quan pha âm thanh Vectorscope (`audio-vectorscope`)**: Hiển thị radar phase polar đồ họa đo độ lệch pha 2 kênh L/R.
+4. **Khử hiện tượng nhấp nháy ánh sáng Deflicker (`deflicker`)**: Làm mượt các rung động ánh sáng đèn huỳnh quang hoặc video time-lapse.
+5. **Phục hồi tín hiệu âm thanh bị vỡ xén ngọn Declip (`declip-audio`)**: Tái tạo đỉnh sóng âm thanh analog bị quá tải peak volume.
+6. **Chuyển đổi dải động cao HDR BT.2020 sang SDR Rec.709 (`hdr-tonemap`)**: Ánh xạ tone-mapping chuẩn Mobius giữ nguyên chi tiết vùng cháy sáng.
+7. **Đóng băng khung hình giữ tiếng Freeze Hold (`freeze-hold`)**: Nhân bản frame cuối cùng và đệm khoảng lặng âm thanh theo giây.
+8. **Máy phát tín hiệu thẻ màu phát sóng chuẩn SMPTE (`generate-colorbars`)**: Tạo bảng màu kiểm định đài truyền hình kèm âm mẫu 1kHz.
+9. **Nâng cấp âm thanh nổi sang âm thanh vòm 5.1 (`upmix-surround51`)**: Thuật toán phân rã stereo thành 6 kênh Dolby Digital AC3.
+10. **So sánh trực quan song song Side-by-Side (`side-by-side-compare`)**: Ghép đôi 2 nguồn video nguyên bản và sau xử lý trên 1 màn hình.
+11. **Giả lập vệt sáng thấu kính Anamorphic Streak (`anamorphic-streak`)**: Tán sắc vệt xanh lam ngang sang trọng phong cách Hollywood Panavision.
+12. **Triệt tiêu tiếng ù rò điện nguồn 50Hz/60Hz Dehum (`dehum-audio`)**: Cắt lọc notch filter dải tần số điện lưới dân dụng và các bội số bậc chẵn/lẻ.
+13. **Hiệu ứng thu phóng lia ảnh Ken Burns (`ken-burns`)**: Tạo chuyển động chậm từ ảnh tĩnh độ phân giải cao thành video cinematic 1080p.
+14. **Bộ khuếch đại tối đa hóa âm lượng LUFS Maximizer (`maximize-loudness`)**: Khóa trần brickwall limiter giữ âm thanh lớn nhất mà không vỡ tiếng.
+15. **Quang sai rìa thấu kính Chromatic Aberration (`chromatic-aberration`)**: Tạo độ lệch phân kỳ kênh màu đỏ/lam tạo cảm giác ống kính cổ điển.
+16. **Nội suy chuyển động 60fps quang học (`interpolate-60fps`)**: Gấp đôi tần số quét khung hình cho các đoạn phim lia máy mượt mà.
+17. **Hiệu ứng trường âm Haas Effect Stereo (`haas-effect`)**: Trì hoãn 18ms giữa 2 tai tạo không gian phòng thu mở rộng đa chiều.
+18. **Hào quang đỏ phim nhựa Halation Bleed (`film-halation`)**: Mô phỏng sự phản xạ ánh sáng vùng highlight qua lớp nhũ tương phim 35mm.
+19. **Xử lý âm học Mid/Side Stereo (`mid-side-processing`)**: Tăng cường trường âm hai bên Side Channel độc lập với kênh trung tâm Mid.
+20. **Gắn đồng hồ giám sát biểu đồ sóng màu RGB Waveform (`burn-color-scopes`)**: In màn hình oscilloscope màu sắc thời gian thực góc trên video.
+21. **Bão hòa băng từ cổ điển Tape Saturation (`tape-saturation`)**: Tạo độ ấm áp và nén âm tự nhiên của đầu từ băng cối Studer.
+22. **Cắt khung hình tỷ lệ siêu rộng Panavision 2.39:1 (`panavision-scope`)**: Tự động crop và đệm viền đen chuẩn rạp chiếu phim IMAX.
+23. **Tổng hợp dải siêu trầm Sub-Bass Resynthesizer (`sub-bass-resynthesize`)**: Tự động sinh dải tần số 40Hz hỗ trợ các bản thu âm bị mỏng bass.
+24. **Bản đồ nhiệt hồng ngoại màu giả Thermal False-Color (`thermal-false-color`)**: Phủ bảng màu quang phổ Inferno đo lường độ sáng đối tượng.
+25. **Chuyển đổi âm thanh đơn sắc sang giả lập Stereo (`mono-to-stereo`)**: Mở rộng trường âm stereo 2 kênh từ file thu âm 1 micro mono.
+26. **Bố cục khung hình lồng khung hình PIP Overlay (`split-screen-pip`)**: Đặt video phụ nhỏ ở góc dưới phải video chính.
+27. **Dịch chuyển Formant giọng nói giữ nguyên cao độ (`voice-formant-shift`)**: Biến đổi âm sắc đặc trưng giọng người nam/nữ theo semitone.
+28. **Xuất bảng ma trận 9 khung hình xem nhanh 3x3 (`thumbnail-grid`)**: Tự động chụp và dàn lưới 3x3 ảnh PNG đại diện cho toàn bộ video.
+29. **Hiệu ứng tối góc thở nhịp nhàng Dynamic Vignette Pulse (`vignette-pulse`)**: Hiệu ứng góc tối dao động hình sin tạo cảm giác hồi hộp.
+30. **Tiêm ngưỡng nhiễu âm sàn Dither Floor (`dither-floor`)**: Ngăn chặn méo cắt số khi xuất audio từ 24-bit/32-bit xuống 16-bit.
 
 ### Nhóm 𝚺: Đột Phá Điểm Kỳ Dị AI & Không Gian (Singularity Suite)
 1. **Gắn thẻ chiếu cầu không gian 360 VR Equirectangular (`inject-spatial-360`)**: Bơm siêu dữ liệu hình chiếu cầu 360 độ chuẩn YouTube VR và Meta Quest.

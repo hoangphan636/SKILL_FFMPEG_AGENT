@@ -12,6 +12,7 @@ import { QuantumMediaSuite } from './quantum/suite.js';
 import { ApexHyperMediaSuite } from './quantum/hyper.js';
 import { OmegaGenesisMediaSuite } from './quantum/omega.js';
 import { SingularityMediaSuite } from './quantum/singularity.js';
+import { OmniverseMediaSuite } from './quantum/omniverse.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
@@ -1016,6 +1017,404 @@ program
     try {
       const result = await SingularityMediaSuite.insertAudioSilence(input, output, options.duration);
       console.log(`[Success] Audio silence gap inserted in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 9.5 OMNIVERSE ENTERPRISE SUITE (30 FEATURES) ---
+program
+  .command('extract-palette <input> <outputPng>')
+  .description('Extract 32-color dominant visual palette from video to PNG')
+  .action(async (input: string, outputPng: string) => {
+    try {
+      const result = await OmniverseMediaSuite.extractPalette(input, outputPng);
+      console.log(`[Success] Extracted palette to ${outputPng} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('scrub-preview [options] <input> <output>')
+  .description('Fast 2x/3x speed scrub preview with pitch-compensated audio')
+  .option('-s, --speed <speed>', 'Playback speed multiplier', (v) => parseFloat(v), 2.0)
+  .action(async (input: string, output: string, options: { speed: number }) => {
+    try {
+      const result = await OmniverseMediaSuite.scrubPreview(input, output, options.speed);
+      console.log(`[Success] Scrub preview generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('audio-vectorscope <inputAudio> <outputVideo>')
+  .description('Render polar visual audio vectorscope / phase correlation video')
+  .action(async (inputAudio: string, outputVideo: string) => {
+    try {
+      const result = await OmniverseMediaSuite.audioVectorscope(inputAudio, outputVideo);
+      console.log(`[Success] Audio vectorscope rendered in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('deflicker <input> <output>')
+  .description('Smooth out brightness flicker in time-lapse and high-speed footage')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.deflicker(input, output);
+      console.log(`[Success] Video deflickered in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('declip-audio <input> <output>')
+  .description('Reconstruct clipped/saturated audio peaks')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.declipAudio(input, output);
+      console.log(`[Success] Audio declipped in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('hdr-tonemap <input> <output>')
+  .description('Tone-map HDR BT.2020 10-bit video down to SDR Rec.709')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.hdrToneMap(input, output);
+      console.log(`[Success] HDR tone-mapped in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('freeze-hold [options] <input> <output>')
+  .description('Hold last video frame and pad audio by N seconds')
+  .option('-d, --duration <sec>', 'Freeze duration in seconds', (v) => parseFloat(v), 3.0)
+  .action(async (input: string, output: string, options: { duration: number }) => {
+    try {
+      const result = await OmniverseMediaSuite.freezeHold(input, output, options.duration);
+      console.log(`[Success] Frame freeze hold created in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('generate-colorbars [options] <output>')
+  .description('Generate SMPTE standard broadcast colorbars and 1kHz reference tone')
+  .option('-d, --duration <sec>', 'Duration in seconds', (v) => parseInt(v, 10), 5)
+  .action(async (output: string, options: { duration: number }) => {
+    try {
+      const result = await OmniverseMediaSuite.generateColorbars(output, options.duration);
+      console.log(`[Success] SMPTE colorbars generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('upmix-surround51 <input> <output>')
+  .description('Up-mix stereo 2.0 audio track to Dolby 5.1 AC3 surround')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.upmixSurround51(input, output);
+      console.log(`[Success] Upmixed to 5.1 surround in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('side-by-side-compare <inputA> <inputB> <output>')
+  .description('Generate side-by-side split screen comparison video')
+  .action(async (inputA: string, inputB: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.sideBySideCompare(inputA, inputB, output);
+      console.log(`[Success] Side-by-side comparison generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('anamorphic-streak <input> <output>')
+  .description('Add anamorphic horizontal blue lens flare streaks')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.anamorphicStreak(input, output);
+      console.log(`[Success] Anamorphic streak applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('dehum-audio [options] <input> <output>')
+  .description('Remove 50Hz/60Hz mains electrical hum and harmonics')
+  .option('-f, --frequency <hz>', 'Fundamental hum frequency (50 or 60)', (v) => parseInt(v, 10), 50)
+  .action(async (input: string, output: string, options: { frequency: number }) => {
+    try {
+      const result = await OmniverseMediaSuite.dehumAudio(input, output, options.frequency);
+      console.log(`[Success] Mains hum removed in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('ken-burns [options] <imageInput> <outputVideo>')
+  .description('Create cinematic slow zoom-in Ken Burns effect from still image')
+  .option('-d, --duration <sec>', 'Video duration in seconds', (v) => parseInt(v, 10), 5)
+  .action(async (imageInput: string, outputVideo: string, options: { duration: number }) => {
+    try {
+      const result = await OmniverseMediaSuite.kenBurns(imageInput, outputVideo, options.duration);
+      console.log(`[Success] Ken Burns video created in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('maximize-loudness <input> <output>')
+  .description('Multi-band brickwall peak limiter & LUFS maximizer')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.maximizeLoudness(input, output);
+      console.log(`[Success] Loudness maximized in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('chromatic-aberration <input> <output>')
+  .description('Add subtle chromatic aberration lens edge displacement')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.chromaticAberration(input, output);
+      console.log(`[Success] Chromatic aberration applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('interpolate-60fps <input> <output>')
+  .description('Interpolate frame rate to 60fps using optical blend')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.interpolate60fps(input, output);
+      console.log(`[Success] Video interpolated to 60fps in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('haas-effect <input> <output>')
+  .description('Haas effect stereo spatial chamber widener (18ms psychoacoustic delay)')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.haasEffectStereo(input, output);
+      console.log(`[Success] Haas stereo effect applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('film-halation <input> <output>')
+  .description('Organic red-orange film edge halation bleed around bright highlights')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.filmHalation(input, output);
+      console.log(`[Success] Film halation applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('mid-side-processing [options] <input> <output>')
+  .description('Mid/Side stereo processing with custom side stereo gain boost')
+  .option('-s, --side-gain <db>', 'Side channel boost in dB', (v) => parseFloat(v), 3.0)
+  .action(async (input: string, output: string, options: { sideGain: number }) => {
+    try {
+      const result = await OmniverseMediaSuite.midSideProcessing(input, output, options.sideGain);
+      console.log(`[Success] Mid/Side processing applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('burn-color-scopes <input> <output>')
+  .description('Burn color grading RGB parade waveform monitor overlay onto video')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.burnColorScopes(input, output);
+      console.log(`[Success] Color scopes burned in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('tape-saturation <input> <output>')
+  .description('Simulate analog reel-to-reel magnetic tape harmonic saturation')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.tapeSaturation(input, output);
+      console.log(`[Success] Tape saturation applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('panavision-scope <input> <output>')
+  .description('Letterbox video to cinematic 2.39:1 widescreen Panavision aspect ratio')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.panavisionScope(input, output);
+      console.log(`[Success] Panavision 2.39:1 scope applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('sub-bass-resynthesize <input> <output>')
+  .description('Synthesize rich 40Hz sub-bass foundation for thin audio tracks')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.subBassResynthesize(input, output);
+      console.log(`[Success] Sub-bass synthesized in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('thermal-false-color <input> <output>')
+  .description('Apply thermal infrared false-color grading palette')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.thermalFalseColor(input, output);
+      console.log(`[Success] Thermal false-color applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('mono-to-stereo <input> <output>')
+  .description('Convert flat mono audio to spacious simulated stereo field')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.monoToStereo(input, output);
+      console.log(`[Success] Mono converted to stereo in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('split-screen-pip <inputMain> <inputPip> <output>')
+  .description('Overlay picture-in-picture window at bottom right')
+  .action(async (inputMain: string, inputPip: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.splitScreenPip(inputMain, inputPip, output);
+      console.log(`[Success] PIP overlay generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('voice-formant-shift [options] <input> <output>')
+  .description('Shift voice formant/pitch with timing preservation')
+  .option('-s, --semitones <semitones>', 'Pitch shift in semitones (-12 to +12)', (v) => parseFloat(v), 4.0)
+  .action(async (input: string, output: string, options: { semitones: number }) => {
+    try {
+      const result = await OmniverseMediaSuite.voiceFormantShift(input, output, options.semitones);
+      console.log(`[Success] Voice formant shifted in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('thumbnail-grid <input> <outputPng>')
+  .description('Generate 3x3 high-definition storyboard contact grid PNG')
+  .action(async (input: string, outputPng: string) => {
+    try {
+      const result = await OmniverseMediaSuite.thumbnailGrid(input, outputPng);
+      console.log(`[Success] Storyboard grid generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('vignette-pulse <input> <output>')
+  .description('Apply dynamic rhythmic breathing vignette to footage')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.vignettePulse(input, output);
+      console.log(`[Success] Pulsing vignette applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('dither-floor <input> <output>')
+  .description('Inject triangular dither noise floor to eliminate digital audio truncation')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmniverseMediaSuite.ditherFloor(input, output);
+      console.log(`[Success] Dither floor applied in ${result.durationMs}ms`);
     } catch (err) {
       console.error(`[Error] ${(err as Error).message}`);
       process.exit(1);
