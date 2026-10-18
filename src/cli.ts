@@ -10,14 +10,15 @@ import { EnterpriseTitanSuite } from './titan/suite.js';
 import { InfiniteApexStudio } from './infinite/studio.js';
 import { QuantumMediaSuite } from './quantum/suite.js';
 import { ApexHyperMediaSuite } from './quantum/hyper.js';
+import { OmegaGenesisMediaSuite } from './quantum/omega.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
 
 program
   .name('ffmpeg-agent')
-  .description('Omni Apex Enterprise FFmpeg Media Agent & 180+ Suite on Windows')
-  .version('8.0.0');
+  .description('Omni Apex Enterprise FFmpeg Media Agent & 210+ Suite on Windows')
+  .version('9.0.0');
 
 // --- 1. CORE WORKFLOWS ---
 program
@@ -751,7 +752,142 @@ program
     }
   });
 
-// --- 8. EFFECTS & AI TRACKING COMMANDS ---
+// --- 8. OMEGA GENESIS SUITE COMMANDS ---
+program
+  .command('super-slowmo [options] <input> <output>')
+  .description('Render cinematic super slow-motion with optical flow interpolation (0.25x / 0.5x)')
+  .option('-s, --speed <factor>', 'Slowdown speed factor (e.g. 0.5 for 2x slow, 0.25 for 4x slow)', (v) => parseFloat(v), 0.5)
+  .action(async (input: string, output: string, options: { speed: number }) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.renderSuperSlowMo(input, output, options.speed);
+      console.log(`[Success] Super slow-motion (${options.speed}x) rendered in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('upscale-4k <input> <output>')
+  .description('Upscale video to 4K Ultra-HD with super-resolution Lanczos & unsharp mask')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.upscaleTo4K(input, output);
+      console.log(`[Success] Upscaled to 4K UHD in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('extract-stems <input> <outputDir>')
+  .description('Extract stereo audio channels into individual WAV stem files')
+  .action(async (input: string, outputDir: string) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.extractAudioStems(input, outputDir);
+      console.log(`[Success] Audio stems extracted into ${outputDir} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('film-grain [options] <input> <output>')
+  .description('Synthesize organic 35mm film grain (Kodak 5219 / 500T Stock)')
+  .option('-i, --intensity <number>', 'Grain intensity (default: 12)', (v) => parseInt(v, 10), 12)
+  .action(async (input: string, output: string, options: { intensity: number }) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.synthesizeFilmGrain(input, output, options.intensity);
+      console.log(`[Success] Film grain synthesized in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('inverse-telecine <input> <output>')
+  .description('Perform broadcast Inverse Telecine (IVTC) 3:2 pulldown removal to clean 24p')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.inverseTelecine(input, output);
+      console.log(`[Success] Inverse telecine applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('quad-split <in1> <in2> <in3> <in4> <output>')
+  .description('Combine 4 videos into a 4-way director / security monitor grid')
+  .action(async (in1: string, in2: string, in3: string, in4: string, output: string) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.createQuadSplitView(in1, in2, in3, in4, output);
+      console.log(`[Success] Quad split view generated into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('room-reverb [options] <input> <output>')
+  .description('Simulate acoustic room convolution impulse reverb (studio, hall, cathedral)')
+  .option('-r, --room <type>', 'Room impulse type (studio, hall, cathedral)', 'hall')
+  .action(async (input: string, output: string, options: { room: 'studio' | 'hall' | 'cathedral' }) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.applyRoomImpulseReverb(input, output, options.room);
+      console.log(`[Success] Room reverb (${options.room}) applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('autocrop-borders <input> <output>')
+  .description('Automatically detect and crop black letterbox/pillarbox borders')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.autoCropBlackBorders(input, output);
+      console.log(`[Success] Auto cropped black borders in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('crossfade-audio [options] <input1> <input2> <output>')
+  .description('Smoothly crossfade between two audio files (DJ / Podcast transition)')
+  .option('-d, --duration <sec>', 'Crossfade duration in seconds', (v) => parseFloat(v), 3.0)
+  .action(async (input1: string, input2: string, output: string, options: { duration: number }) => {
+    try {
+      const result = await OmegaGenesisMediaSuite.crossfadeAudioTracks(input1, input2, output, options.duration);
+      console.log(`[Success] Audio tracks crossfaded in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('detect-freeze <input>')
+  .description('Analyze video stream for frozen frames and generate broadcast QC report')
+  .action(async (input: string) => {
+    try {
+      const report = await OmegaGenesisMediaSuite.detectVideoFreezeQC(input);
+      console.log(`[QC Report] Detected ${report.frozenCount} frozen frame event(s).`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 9. EFFECTS & AI TRACKING COMMANDS ---
 program
   .command('effects')
   .description('List available effects in the registry')

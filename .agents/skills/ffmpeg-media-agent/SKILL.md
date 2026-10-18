@@ -1,14 +1,14 @@
 ---
 name: ffmpeg-media-agent
-description: "Ultra Apex Enterprise FFmpeg Media Agent Skill & 180+ Engine Suite on Windows with Apple ProRes 422/4444, Anaglyph 3D, Freeze-Frame Punch, 8D Binaural Audio, Motion Flow 60fps, FM Radio Voice, Watermark Delogo, 144 Cinema Effects & AI Vision Bridge."
-version: "8.0.0"
+description: "Omega Genesis Enterprise FFmpeg Media Agent Skill & 210+ Engine Suite on Windows with Super Slow-Mo, 4K Lanczos Upscale, Audio Stem Separator, 35mm Film Grain, IVTC Pulldown, Quad-Split Monitor, Room Impulse Reverb, 164 Cinema Effects & AI Vision Bridge."
+version: "9.0.0"
 author: "Lead Staff Systems Architect"
-tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "prores", "anaglyph-3d", "spatial-8d", "av1", "rtmp"]
+tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "omega-suite", "slowmo", "upscale-4k", "audio-stems", "prores"]
 ---
 
-# Ultra Apex Enterprise FFmpeg Media Agent Skill & Engine (v8.0)
+# Omega Genesis Enterprise FFmpeg Media Agent Skill & Engine (v9.0)
 
-Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **180+ tính năng & 144 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio: từ xuất định dạng Master phát sóng Apple ProRes 422 HQ / 4444 Alpha, chuyển đổi phim 3D Anaglyph Red-Cyan, đóng băng khung hình kịch tính Freeze-Frame Punch, âm thanh vòm 8D Binaural xoay tròn quanh đầu, nội suy khung hình chuyển động siêu mượt Motion Flow 60fps/120fps, giả lập giọng đọc phòng thu FM Radio, tẩy xóa watermark Delogo, đến mã hóa AV1, RTMP Live Broadcast và AI Face Tracking.
+Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **210+ tính năng & 164 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Hollywood Post-Production Studio: từ quay siêu chậm Super Slow-Motion 0.25x mượt mà bằng dòng quang học (Optical Flow), nâng cấp hình ảnh 4K Ultra-HD siêu sắc nét Lanczos, tách dải âm thanh Master Stems nhiều kênh, tổng hợp hạt phim nhựa 35mm Kodak Vision3, khử quét mành xen kẽ Inverse Telecine (IVTC), màn hình giám sát 4 góc Quad-Split, tái tạo không gian phòng thu Impulse Reverb, đến xuất Apple ProRes 422 HQ / 4444 Alpha, AV1, RTMP Live Broadcast và AI Face Tracking.
 
 ---
 
@@ -22,7 +22,19 @@ Tự động cấu hình PATH, cài đặt Node.js LTS, Gyan FFmpeg Essentials, 
 
 ---
 
-## 2. Toàn Bộ 180+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+## 2. Toàn Bộ 210+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+
+### Nhóm Ω: Đột Phá Đỉnh Cao Sáng Tạo & Phát Sóng (Omega Genesis Suite)
+1. **Quay siêu chậm điện ảnh Super Slow-Motion 0.25x / 0.5x (`super-slowmo`)**: Nội suy dòng quang học (Optical Flow) làm chậm chuyển động hành động mà không bị giật khung hình.
+2. **Nâng cấp độ phân giải 4K Ultra-HD Lanczos (`upscale-4k`)**: Thuật toán nội suy Lanczos tái tạo rìa chi tiết siêu nét và bộ lọc Unsharp Mask.
+3. **Tách dải âm thanh Stereo Stems riêng biệt (`extract-stems`)**: Trích xuất kênh Trái và kênh Phải thành từng file WAV Master độc lập để mix nhạc.
+4. **Tổng hợp hạt phim nhựa hữu cơ 35mm (`film-grain`)**: Giả lập cấu trúc hạt bạc halogen hữu cơ của cuộn phim nhựa Kodak Vision3 500T.
+5. **Khử xen kẽ chuẩn truyền hình Inverse Telecine IVTC (`inverse-telecine`)**: Đảo ngược 3:2 pulldown từ truyền hình 60i về 24p điện ảnh nguyên bản.
+6. **Màn hình giám sát 4 góc Quad-Split Multiviewer (`quad-split`)**: Ghép 4 nguồn video thành lưới quan sát giám sát / phòng điều khiển của đạo diễn.
+7. **Tái tạo âm vang không gian Impulse Response Reverb (`room-reverb`)**: Giả lập độ dội âm của phòng thu Studio, đại sảnh Hall hoặc giáo đường Cathedral.
+8. **Tự động dò tìm và cắt viền đen Autocrop (`autocrop-borders`)**: Xóa bỏ vệt viền đen letterbox/pillarbox trả lại khung hình chuẩn.
+9. **Chuyển bài hát mượt mà Crossfade Audio (`crossfade-audio`)**: Hòa âm chuyển bài phong cách DJ / Podcast không có khoảng lặng ngắt quãng.
+10. **Tự động kiểm định QC đóng băng khung hình Freeze Detect (`detect-freeze`)**: Quét và lập báo cáo kỹ thuật các phân đoạn bị treo hình / lag video.
 
 ### Nhóm H: Đột Phá Studio Master & Hậu Kỳ Đỉnh Cao (Apex Hyper Suite)
 1. **Xuất Master chuẩn phát sóng Apple ProRes 422 HQ (`export-prores`)**: Chuẩn nén điện ảnh 10-bit YUV422 không suy hao chất lượng cho Apple Final Cut và DaVinci Resolve.
@@ -92,7 +104,8 @@ Tự động cấu hình PATH, cài đặt Node.js LTS, Gyan FFmpeg Essentials, 
 47. **Tách phông xanh Studio (`chromakey_green`)**.
 48. **Xóa mờ phông nền giả lập khẩu độ f/1.4 Bokeh (`background_defocus_blur`)**.
 
-### Nhóm D: Kho 144 Hiệu Ứng Điện Ảnh Hollywood (Effects Suite)
+### Nhóm D: Kho 164 Hiệu Ứng Điện Ảnh Hollywood (Effects Suite)
+- **Omega Genesis Masters**: `tenet_inverted_time_forward`, `braindance_netrunner_glitch`, `mad_max_scorched_chrome`, `ghibli_miyazaki_watercolor`, `fincher_fight_club_green`, `tron_legacy_lightcycle_grid`, `metropolis_1920s_expressionism`, `shinjuku_cyber_billboard_rain`, `audio_daft_punk_flanger`, `audio_leslie_rotary_speaker`, `john_wick_continental_crimson`, `abyss_deep_sea_hydro`, `vhs_fast_forward_scanlines`, `isle_of_dogs_woodblock`, `james_webb_deep_space_field`, `vision_pro_spatial_passthrough`, `audio_kling_klang_robot_vocoder`, `audio_earthquake_30hz_shaker`, `matrix_code_infiltration_wall`, `apollo_11_lunar_broadcast`...
 - **Apex Studio Masters**: `topgun_sunset_golden_hour`, `cyberpunk_laser_grid`, `batman_gotham_crimson_charcoal`, `imax_70mm_film_perforation`, `alien_nostromo_crt_console`, `euphoria_glitter_sparkle`, `grindhouse_1970s_drivein`, `lalaland_twilight_hour`, `cyber_hud_target_lock`, `tokyo_drift_rain_reflection`, `kodachrome_64_classic_slide`, `audio_paranoid_whammy_glitch`, `audio_sun_records_slapback`, `flir_thermal_heatseeker`, `moonrise_kingdom_16mm`, `hologram_interlace_beam`, `audio_808_trap_tube_drive`, `dark_knight_imax_chicago`, `night_hunter_infrared_gen3`, `apple_commercial_clean_luxury`...
 - **Quantum Additions**: `cyberpunk_2077_yellow_hud`, `interstellar_wormhole_warp`, `dune_spice_desert_sun`, `fight_club_subliminal_flash`, `succession_luxury_zoom`, `sincity_neon_rain_noir`, `cyber_biomonitor_heartbeat`, `audio_submarine_sonar_ping`, `audio_gramophone_vinyl_crackle`, `vhs_tracking_loss_distortion`, `acid_trip_rainbow_dispersion`, `anime_action_speedlines`, `matrix_operator_green_terminal`, `champagne_gold_luxury`, `nordic_noir_bleak_cold`, `gameboy_original_4shade`, `golden_dust_particles`, `whip_zoom_down_snap`, `audio_synthwave_phaser`, `white_infinity_cyc`...
 - **Infinite Series**: `bladerunner_2049_amber`, `wes_anderson_symmetry`, `oppenheimer_70mm_monochrome`, `euphoria_neon_purple`, `cyber_digital_corrupter`, `technicolor_3strip_vintage`, `dreamcore_ethereal_bloom`, `audio_lofi_vinyl_beats`, `audio_bass_subwoofer_boost`, `bullet_time_matrix_freeze`, `split_diopter_dual_focus`, `french_new_wave_1960`, `sincity_isolated_red`, `commodore_64_retro`, `angelic_white_dream_glow`, `audio_helium_balloon`...
