@@ -7,14 +7,15 @@ import { FaceTracker } from './tracking/tracker.js';
 import { AdvancedMediaEngine } from './advanced/engine.js';
 import { ApexCinemaStudio } from './cinema/studio.js';
 import { EnterpriseTitanSuite } from './titan/suite.js';
+import { InfiniteApexStudio } from './infinite/studio.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
 
 program
   .name('ffmpeg-agent')
-  .description('Titan Enterprise FFmpeg Media Agent & 90+ Engine Suite on Windows')
-  .version('5.0.0');
+  .description('Infinite Apex Enterprise FFmpeg Media Agent & 120+ Suite on Windows')
+  .version('6.0.0');
 
 // --- 1. CORE WORKFLOWS ---
 program
@@ -317,7 +318,7 @@ program
     }
   });
 
-// --- 4. ENTERPRISE TITAN SUITE (FEATURES 61-70) ---
+// --- 4. ENTERPRISE TITAN SUITE ---
 program
   .command('burn-timecode <input> <output>')
   .description('Burn-in SMPTE Timecode / LTC counter onto video for editorial dailies')
@@ -388,7 +389,7 @@ program
   });
 
 program
-  .command('spritesheet <input> <outputPng>')
+  .command('spritesheet [options] <input> <outputPng>')
   .description('Generate web video scrubbing thumbnail sprite sheet (10x10 tile matrix)')
   .option('--interval <sec>', 'Seconds between thumbnail captures', (v) => parseFloat(v), 2)
   .action(async (input: string, outputPng: string, options: { interval: number }) => {
@@ -440,7 +441,106 @@ program
     }
   });
 
-// --- 5. EFFECTS & AI TRACKING COMMANDS ---
+// --- 5. INFINITE APEX SUITE (FEATURES 91-100) ---
+program
+  .command('insert-broll <mainVideo> <bRollVideo> <output>')
+  .description('Insert secondary B-Roll footage PIP at specific timestamp')
+  .option('--start <sec>', 'Timestamp in seconds to begin B-roll', (v) => parseFloat(v), 2)
+  .option('--duration <sec>', 'Duration in seconds of B-roll', (v) => parseFloat(v), 3)
+  .action(async (mainVideo: string, bRollVideo: string, output: string, options: { start: number; duration: number }) => {
+    try {
+      const result = await InfiniteApexStudio.insertBRoll(mainVideo, bRollVideo, output, {
+        startTimeSec: options.start,
+        durationSec: options.duration,
+      });
+      console.log(`[Success] B-Roll inserted into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('auto-ducking <voiceInput> <bgmInput> <output>')
+  .description('Auto-duck background music track under vocal speech audio')
+  .action(async (voiceInput: string, bgmInput: string, output: string) => {
+    try {
+      const result = await InfiniteApexStudio.autoAudioDucking(voiceInput, bgmInput, output);
+      console.log(`[Success] Audio auto-ducked into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('add-progress-bar <input> <output>')
+  .description('Add animated linear progress bar indicator for TikTok / Reels')
+  .option('--height <px>', 'Height of bar in pixels', (v) => parseInt(v, 10), 8)
+  .action(async (input: string, output: string, options: { height: number }) => {
+    try {
+      const result = await InfiniteApexStudio.addProgressBar(input, output, options.height);
+      console.log(`[Success] Progress bar added into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('blur-privacy <input> <output>')
+  .description('Apply center oval privacy blur to obscure faces / sensitive content')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await InfiniteApexStudio.blurCenterPrivacy(input, output);
+      console.log(`[Success] Center privacy blur applied into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('extract-keyframes <input> <outputDir>')
+  .description('Extract true I-Frame visual keyframes for fast scene overview')
+  .action(async (input: string, outputDir: string) => {
+    try {
+      const result = await InfiniteApexStudio.extractKeyframes(input, outputDir);
+      console.log(`[Success] Extracted keyframes to "${outputDir}" in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('follower-cta <input> <output>')
+  .description('Overlay pop-up animated Call-To-Action (SUBSCRIBE NOW / FOLLOW)')
+  .option('--text <ctaText>', 'CTA text banner', 'SUBSCRIBE NOW')
+  .action(async (input: string, output: string, options: { text: string }) => {
+    try {
+      const result = await InfiniteApexStudio.overlayFollowerCTA(input, output, options.text);
+      console.log(`[Success] Follower CTA overlaid into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('widen-stereo <input> <output>')
+  .description('Widen stereo soundstage width for headphone immersion')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await InfiniteApexStudio.widenStereoAudio(input, output);
+      console.log(`[Success] Stereo audio widened into ${output} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 6. EFFECTS & AI TRACKING COMMANDS ---
 program
   .command('effects')
   .description('List available effects in the registry')

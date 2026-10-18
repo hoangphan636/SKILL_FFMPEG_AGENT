@@ -2,6 +2,7 @@ import type { EffectDefinition } from './schema.js';
 import { EXTENDED_30_EFFECTS } from './extended.js';
 import { CINEMA_20_EFFECTS } from './cinema.js';
 import { TITAN_20_EFFECTS } from './titan.js';
+import { INFINITE_20_EFFECTS } from './infinite.js';
 
 const BASE_REGISTRY: Record<string, EffectDefinition> = {
   // 1. Color Filters
@@ -353,4 +354,5 @@ export const EFFECT_REGISTRY: Record<string, EffectDefinition> = {
   ...EXTENDED_30_EFFECTS,
   ...CINEMA_20_EFFECTS,
   ...TITAN_20_EFFECTS,
+  ...INFINITE_20_EFFECTS,
 };
