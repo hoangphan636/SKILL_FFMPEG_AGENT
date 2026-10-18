@@ -1,5 +1,6 @@
 import type { EffectDefinition } from './schema.js';
 import { EXTENDED_30_EFFECTS } from './extended.js';
+import { CINEMA_20_EFFECTS } from './cinema.js';
 
 const BASE_REGISTRY: Record<string, EffectDefinition> = {
   // 1. Color Filters
@@ -349,4 +350,5 @@ const BASE_REGISTRY: Record<string, EffectDefinition> = {
 export const EFFECT_REGISTRY: Record<string, EffectDefinition> = {
   ...BASE_REGISTRY,
   ...EXTENDED_30_EFFECTS,
+  ...CINEMA_20_EFFECTS,
 };

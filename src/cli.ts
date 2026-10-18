@@ -5,14 +5,15 @@ import { runBatchManifest } from './batch.js';
 import { EffectEngine } from './effects/engine.js';
 import { FaceTracker } from './tracking/tracker.js';
 import { AdvancedMediaEngine } from './advanced/engine.js';
+import { ApexCinemaStudio } from './cinema/studio.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
 
 program
   .name('ffmpeg-agent')
-  .description('Enterprise FFmpeg Media Agent & 30+ Advanced Engine Suite on Windows')
-  .version('3.0.0');
+  .description('Apex Enterprise FFmpeg Media Agent & 60+ Engine Suite on Windows')
+  .version('4.0.0');
 
 // --- 1. CORE WORKFLOWS ---
 program
@@ -101,7 +102,7 @@ program
     }
   });
 
-// --- 2. ADVANCED PROFESSIONAL SUITE (30 FEATURES) ---
+// --- 2. ADVANCED PROFESSIONAL SUITE ---
 program
   .command('compress-target-size <input> <output>')
   .description('Compress video to fit strictly under target Megabytes (e.g. 20MB for Discord/Email)')
@@ -243,7 +244,92 @@ program
     }
   });
 
-// --- 3. EFFECTS & AI TRACKING COMMANDS ---
+// --- 3. APEX CINEMA & BROADCAST STUDIO (FEATURES 31-40) ---
+program
+  .command('package-hls <input> <outputDir>')
+  .description('Package video into adaptive HTTP Live Streaming (HLS m3u8 + ts segments)')
+  .option('--segment-duration <number>', 'Segment duration in seconds', (v) => parseFloat(v), 4)
+  .action(async (input: string, outputDir: string, options: { segmentDuration: number }) => {
+    try {
+      const result = await ApexCinemaStudio.packageHLS(input, outputDir, options.segmentDuration);
+      console.log(`[Success] Packaged into HLS stream in ${result.durationMs}ms at "${outputDir}"`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('detect-scenes <input>')
+  .description('Detect cinematic scene cuts and shot transitions with timestamp scores')
+  .option('--threshold <number>', 'Scene cut sensitivity 0.1 to 1.0', (v) => parseFloat(v), 0.35)
+  .action(async (input: string, options: { threshold: number }) => {
+    try {
+      const scenes = await ApexCinemaStudio.detectSceneCuts(input, options.threshold);
+      console.log(`Found ${scenes.length} scene transition(s):`);
+      console.log(JSON.stringify(scenes, null, 2));
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('contact-sheet <input> <outputImage>')
+  .description('Generate filmstrip contact sheet preview storyboard grid')
+  .option('--cols <number>', 'Grid columns', (v) => parseInt(v, 10), 4)
+  .option('--rows <number>', 'Grid rows', (v) => parseInt(v, 10), 3)
+  .action(async (input: string, outputImage: string, options: { cols: number; rows: number }) => {
+    try {
+      const result = await ApexCinemaStudio.generateContactSheet(input, outputImage, options.cols, options.rows);
+      console.log(`[Success] Contact sheet generated in ${result.durationMs}ms at "${outputImage}"`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('isolate-vocals <input> <vocalsOut> <instrumentalOut>')
+  .description('Split dialog/vocals and instrumental background music tracks')
+  .action(async (input: string, vocalsOut: string, instrumentalOut: string) => {
+    try {
+      const result = await ApexCinemaStudio.isolateVocals(input, vocalsOut, instrumentalOut);
+      console.log(`[Success] Vocals and Instrumental split in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('conform-aspect <input> <output>')
+  .description('Conform video to broadcast standard aspect ratio with letterbox/pillarbox padding')
+  .option('--ratio <aspect>', 'Target aspect ratio (16:9, 9:16, 1:1, 21:9)', '16:9')
+  .action(async (input: string, output: string, options: { ratio: any }) => {
+    try {
+      const result = await ApexCinemaStudio.conformAspectRatio(input, output, options.ratio);
+      console.log(`[Success] Conformed to ${options.ratio} in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('tonemap-hdr <input> <output>')
+  .description('Tone-map 4K HDR10 / HLG wide color gamut to standard SDR Rec.709')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await ApexCinemaStudio.toneMapHdrToSdr(input, output);
+      console.log(`[Success] HDR tone-mapped to SDR in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 4. EFFECTS & AI TRACKING COMMANDS ---
 program
   .command('effects')
   .description('List available effects in the registry')
