@@ -1,0 +1,23 @@
+{
+  "tasks": [
+    {
+      "type": "convert",
+      "input": "samples/demo_video.mp4",
+      "output": "work/batch_converted.mp4",
+      "crf": 26,
+      "preset": "ultrafast"
+    },
+    {
+      "type": "thumbnail",
+      "input": "samples/demo_video.mp4",
+      "output": "work/batch_thumb.jpg",
+      "at": "00:00:03"
+    },
+    {
+      "type": "extract-audio",
+      "input": "samples/demo_video.mp4",
+      "output": "work/batch_audio.mp3",
+      "bitrate": "128k"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "ffmpeg-agent-skill",
+  "version": "1.0.0",
+  "description": "FFmpeg AI Agent Skill and Media Engine for Codex & Antigravity on Windows",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "ffmpeg-agent": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "doctor": "tsx src/doctor.ts",
+    "test": "vitest run",
+    "dev": "tsx src/cli.ts",
+    "lint": "eslint src/**"
+  },
+  "keywords": [
+    "ffmpeg",
+    "agent-skill",
+    "media-engine",
+    "codex",
+    "antigravity",
+    "windows"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.8.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "type": "convert",
+      "input": "samples/clip.mov",
+      "output": "work/clip.mp4",
+      "crf": 23,
+      "preset": "medium"
+    },
+    {
+      "type": "thumbnail",
+      "input": "samples/clip.mov",
+      "output": "work/clip-thumb.jpg",
+      "at": "00:00:02"
+    },
+    {
+      "type": "extract-audio",
+      "input": "samples/clip.mov",
+      "output": "work/clip-audio.mp3"
+    }
+  ]
+}

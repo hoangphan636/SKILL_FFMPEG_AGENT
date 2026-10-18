@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 260" width="100%" height="260" fill="none">
+  <defs>
+    <linearGradient id="termGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#9B51E0" />
+    </linearGradient>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#00F2FE" flood-opacity="0.25" />
+    </filter>
+    <style>
+      .txt { font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; }
+      .prompt { fill: #00F2FE; font-weight: bold; }
+      .cmd { fill: #F8FAFC; }
+      .success { fill: #10B981; font-weight: bold; }
+      .dim { fill: #64748B; }
+      .cursor {
+        fill: #00F2FE;
+        animation: blink 0.9s infinite alternate;
+      }
+      @keyframes blink { 0% { opacity: 0; } 100% { opacity: 1; } }
+    </style>
+  </defs>
+
+  <!-- Window Container with Glowing 3D Border -->
+  <rect x="10" y="10" width="830" height="240" rx="14" fill="url(#termGrad)" stroke="url(#cyanPurple)" stroke-width="2" filter="url(#boxShadow)" />
+
+  <!-- Window Titlebar -->
+  <rect x="10" y="10" width="830" height="38" rx="14" fill="#1E293B" />
+  <circle cx="36" cy="29" r="6" fill="#EF4444" />
+  <circle cx="56" cy="29" r="6" fill="#F59E0B" />
+  <circle cx="76" cy="29" r="6" fill="#10B981" />
+  <text x="425" y="34" fill="#94A3B8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600" text-anchor="middle">PowerShell &bull; FFmpeg AI Agent Engine</text>
+
+  <!-- Terminal Content Lines -->
+  <g class="txt" transform="translate(30, 75)">
+    <!-- Line 1: Bootstrap -->
+    <text y="0"><tspan class="prompt">PS C:\&gt;</tspan> <tspan class="cmd">.\bootstrap.ps1</tspan></text>
+    <text y="24" class="success">✔ [Bootstrap] Node.js LTS, FFmpeg 9.0.1, PATH &amp; TypeScript Ready</text>
+
+    <!-- Line 2: Convert Command -->
+    <text y="58"><tspan class="prompt">PS C:\&gt;</tspan> <tspan class="cmd">node dist/cli.js convert "samples\input.mov" "work\out.mp4" --crf 23</tspan></text>
+    <text y="82" class="dim">ℹ Validating paths: canonical check passed &bull; Zero-Overwrite enforced</text>
+    <text y="104" class="success">✔ [Success] Transcoded in 348ms &bull; Video: H.264 | Audio: AAC &bull; Size: 252 KB</text>
+
+    <!-- Line 3: Active Prompt -->
+    <text y="138"><tspan class="prompt">PS C:\&gt;</tspan> <tspan class="cmd">node dist/cli.js info "work\out.mp4"</tspan><rect x="290" y="126" width="8" height="15" class="cursor" /></text>
+  </g>
+</svg>

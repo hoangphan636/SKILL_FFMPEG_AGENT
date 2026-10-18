@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "type": "effect",
+      "effectId": "vintage_film_grain",
+      "input": "samples/demo_video.mp4",
+      "output": "work/batch_vintage.mp4"
+    },
+    {
+      "type": "effect",
+      "effectId": "voice_deep_pitch",
+      "input": "samples/demo_video.mp4",
+      "output": "work/batch_deepvoice.mp4"
+    },
+    {
+      "type": "effect",
+      "effectId": "dreamy_bloom_glow",
+      "input": "samples/demo_video.mp4",
+      "output": "work/batch_bloom.mp4"
+    }
+  ]
+}
