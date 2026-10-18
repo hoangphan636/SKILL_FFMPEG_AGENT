@@ -9,14 +9,15 @@ import { ApexCinemaStudio } from './cinema/studio.js';
 import { EnterpriseTitanSuite } from './titan/suite.js';
 import { InfiniteApexStudio } from './infinite/studio.js';
 import { QuantumMediaSuite } from './quantum/suite.js';
+import { ApexHyperMediaSuite } from './quantum/hyper.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
 
 program
   .name('ffmpeg-agent')
-  .description('Omni Apex Enterprise FFmpeg Media Agent & 150+ Suite on Windows')
-  .version('7.0.0');
+  .description('Omni Apex Enterprise FFmpeg Media Agent & 180+ Suite on Windows')
+  .version('8.0.0');
 
 // --- 1. CORE WORKFLOWS ---
 program
@@ -610,7 +611,147 @@ program
     }
   });
 
-// --- 7. EFFECTS & AI TRACKING COMMANDS ---
+// --- 7. APEX HYPER SUITE COMMANDS ---
+program
+  .command('export-prores [options] <input> <output>')
+  .description('Export Apple ProRes 422 master broadcast file (proxy, lt, standard, hq)')
+  .option('-p, --profile <profile>', 'ProRes profile (proxy, lt, standard, hq)', 'hq')
+  .action(async (input: string, output: string, options: { profile: 'proxy' | 'lt' | 'standard' | 'hq' }) => {
+    try {
+      const result = await ApexHyperMediaSuite.exportProRes(input, output, options.profile);
+      console.log(`[Success] Exported Apple ProRes 422 (${options.profile}) in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('convert-stereo3d <leftInput> <rightInput> <output>')
+  .description('Convert stereoscopic 3D left/right video pair into anaglyph Red-Cyan 3D glasses format')
+  .action(async (leftInput: string, rightInput: string, output: string) => {
+    try {
+      const result = await ApexHyperMediaSuite.convertStereo3D(leftInput, rightInput, output);
+      console.log(`[Success] Stereoscopic 3D anaglyph converted in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('freeze-frame [options] <input> <output>')
+  .description('Apply dynamic dramatic freeze-frame impact punch')
+  .option('--sec <number>', 'Timestamp where freeze begins', (v) => parseFloat(v), 2.0)
+  .option('--duration <number>', 'Duration of frozen frame in seconds', (v) => parseFloat(v), 1.5)
+  .action(async (input: string, output: string, options: { sec: number; duration: number }) => {
+    try {
+      const result = await ApexHyperMediaSuite.freezeFrame(input, output, options.sec, options.duration);
+      console.log(`[Success] Freeze frame impact generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('spatial-8d [options] <input> <output>')
+  .description('Render immersive 8D circular spatial audio panning around listener head')
+  .option('--speed <hz>', 'Rotational circle speed in Hz (default: 0.2)', (v) => parseFloat(v), 0.2)
+  .action(async (input: string, output: string, options: { speed: number }) => {
+    try {
+      const result = await ApexHyperMediaSuite.createBinauralSpatial(input, output, options.speed);
+      console.log(`[Success] 8D Spatial audio rendered in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('xray-heatmap <input> <output>')
+  .description('Render optical color inversion X-Ray heatmap scanner')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await ApexHyperMediaSuite.renderXRayHeatmap(input, output);
+      console.log(`[Success] X-Ray heatmap generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('motion-flow [options] <input> <output>')
+  .description('Smooth video frame interpolation up to 60fps/120fps motion flow')
+  .option('--fps <number>', 'Target interpolated FPS (default: 60)', (v) => parseInt(v, 10), 60)
+  .action(async (input: string, output: string, options: { fps: number }) => {
+    try {
+      const result = await ApexHyperMediaSuite.interpolateMotionFlow(input, output, options.fps);
+      console.log(`[Success] Motion flow interpolated to ${options.fps}fps in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('enhance-radio <input> <output>')
+  .description('Apply broadcast FM radio studio multiband compressor & voice crystalizer')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await ApexHyperMediaSuite.enhanceRadioVoice(input, output);
+      console.log(`[Success] FM Radio voice enhanced in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('remove-watermark <input> <output>')
+  .description('Scrub and delogo corner watermark by coordinates')
+  .requiredOption('--x <number>', 'X offset', (v) => parseInt(v, 10))
+  .requiredOption('--y <number>', 'Y offset', (v) => parseInt(v, 10))
+  .requiredOption('--w <number>', 'Width', (v) => parseInt(v, 10))
+  .requiredOption('--h <number>', 'Height', (v) => parseInt(v, 10))
+  .action(async (input: string, output: string, options: { x: number; y: number; w: number; h: number }) => {
+    try {
+      const result = await ApexHyperMediaSuite.removeCornerWatermark(input, output, options.x, options.y, options.w, options.h);
+      console.log(`[Success] Watermark scrubbed in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('reverse-media <input> <output>')
+  .description('Reverse video & audio playback backwards with precise frame timecodes')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await ApexHyperMediaSuite.reverseMedia(input, output);
+      console.log(`[Success] Media reversed in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('export-prores-alpha <input> <output>')
+  .description('Export transparent alpha channel video to Apple ProRes 4444')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await ApexHyperMediaSuite.exportProResAlpha(input, output);
+      console.log(`[Success] ProRes 4444 Alpha exported in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 8. EFFECTS & AI TRACKING COMMANDS ---
 program
   .command('effects')
   .description('List available effects in the registry')

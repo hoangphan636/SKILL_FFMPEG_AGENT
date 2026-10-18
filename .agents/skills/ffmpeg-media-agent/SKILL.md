@@ -1,14 +1,14 @@
 ---
 name: ffmpeg-media-agent
-description: "Quantum Apex Enterprise FFmpeg Media Agent Skill & 150+ Engine Suite on Windows with AV1 Transcoding, RTMP Live Streaming, Phase Correction, 180° Shutter, Speech Leveler, Wind Scrubber, Countdown, 124 Cinema Effects & AI Vision Bridge."
-version: "7.0.0"
+description: "Ultra Apex Enterprise FFmpeg Media Agent Skill & 180+ Engine Suite on Windows with Apple ProRes 422/4444, Anaglyph 3D, Freeze-Frame Punch, 8D Binaural Audio, Motion Flow 60fps, FM Radio Voice, Watermark Delogo, 144 Cinema Effects & AI Vision Bridge."
+version: "8.0.0"
 author: "Lead Staff Systems Architect"
-tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "av1", "rtmp", "countdown", "b-roll", "audio-ducking"]
+tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "prores", "anaglyph-3d", "spatial-8d", "av1", "rtmp"]
 ---
 
-# Quantum Apex Enterprise FFmpeg Media Agent Skill & Engine (v7.0)
+# Ultra Apex Enterprise FFmpeg Media Agent Skill & Engine (v8.0)
 
-Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **150+ tính năng & 124 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio: từ mã hóa AV1 thế hệ mới, phát sóng trực tiếp RTMP Live Broadcast, hiệu chỉnh lệch pha âm thanh Phase Correlation, giả lập góc mở màn trập 180° Motion Blur, cân bằng động học giọng nói Speech Leveler, bộ lọc gió micro, bộ đếm ngược Countdown Timer, chèn B-Roll, Auto Audio Ducking đến kiểm định chất lượng VMAF/SSIM và AR Face Tracking.
+Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **180+ tính năng & 144 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio: từ xuất định dạng Master phát sóng Apple ProRes 422 HQ / 4444 Alpha, chuyển đổi phim 3D Anaglyph Red-Cyan, đóng băng khung hình kịch tính Freeze-Frame Punch, âm thanh vòm 8D Binaural xoay tròn quanh đầu, nội suy khung hình chuyển động siêu mượt Motion Flow 60fps/120fps, giả lập giọng đọc phòng thu FM Radio, tẩy xóa watermark Delogo, đến mã hóa AV1, RTMP Live Broadcast và AI Face Tracking.
 
 ---
 
@@ -22,7 +22,19 @@ Tự động cấu hình PATH, cài đặt Node.js LTS, Gyan FFmpeg Essentials, 
 
 ---
 
-## 2. Toàn Bộ 150+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+## 2. Toàn Bộ 180+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+
+### Nhóm H: Đột Phá Studio Master & Hậu Kỳ Đỉnh Cao (Apex Hyper Suite)
+1. **Xuất Master chuẩn phát sóng Apple ProRes 422 HQ (`export-prores`)**: Chuẩn nén điện ảnh 10-bit YUV422 không suy hao chất lượng cho Apple Final Cut và DaVinci Resolve.
+2. **Chuyển đổi phim nổi 3D Anaglyph Red-Cyan (`convert-stereo3d`)**: Kết hợp cặp góc nhìn Trái/Phải thành video 3D xem qua kính màu lập thể.
+3. **Đóng băng khung hình kịch tính Freeze-Frame Punch (`freeze-frame`)**: Dừng hình tại khoảnh khắc điểm nhấn kết hợp loop frame độc đáo.
+4. **Âm thanh vòm 8D Binaural xoay tròn quanh đầu (`spatial-8d`)**: Giả lập hiệu ứng âm thanh 8D di chuyển vòng cung 360 độ trong không gian tai nghe.
+5. **Máy quét nhiệt bức xạ quang học X-Ray Heatmap (`xray-heatmap`)**: Đảo ngược màu sắc quang phổ âm bản giả lập máy soi chiếu an ninh / scan nhiệt.
+6. **Nội suy khung hình chuyển động siêu mượt Motion Flow 60fps (`motion-flow`)**: Chuyển đổi video 24fps/30fps giật lắc thành 60fps/120fps mượt mà bằng thuật toán Minkowski Blend.
+7. **Bộ cân bằng âm thanh giọng nói phòng thu FM Radio (`enhance-radio`)**: Nén multiband dynamic range và làm sáng âm tiết giọng MC phát thanh.
+8. **Tẩy xóa đóng dấu bản quyền Delogo thông minh (`remove-watermark`)**: Loại bỏ logo, watermark ở 4 góc màn hình theo tọa độ x, y, w, h.
+9. **Đảo ngược chiều thời gian video & audio (`reverse-media`)**: Phát lùi video và âm thanh theo chiều ngược thời gian với timecode chuẩn xác.
+10. **Xuất video kênh Alpha trong suốt Apple ProRes 4444 (`export-prores-alpha`)**: Bảo toàn trọn vẹn kênh màu RGBA / YUVA trong suốt cho đồ họa VFX.
 
 ### Nhóm S: Đột Phá Hậu Kỳ Lượng Tử (Quantum Apex Suite)
 1. **Mã hóa video AV1 thế hệ mới (`transcode-av1`)**: Nén video bằng chuẩn SVT-AV1 / Opus tiết kiệm 40% dung lượng vượt trội H.265/H.264.
@@ -80,7 +92,8 @@ Tự động cấu hình PATH, cài đặt Node.js LTS, Gyan FFmpeg Essentials, 
 47. **Tách phông xanh Studio (`chromakey_green`)**.
 48. **Xóa mờ phông nền giả lập khẩu độ f/1.4 Bokeh (`background_defocus_blur`)**.
 
-### Nhóm D: Kho 124 Hiệu Ứng Điện Ảnh Hollywood (Effects Suite)
+### Nhóm D: Kho 144 Hiệu Ứng Điện Ảnh Hollywood (Effects Suite)
+- **Apex Studio Masters**: `topgun_sunset_golden_hour`, `cyberpunk_laser_grid`, `batman_gotham_crimson_charcoal`, `imax_70mm_film_perforation`, `alien_nostromo_crt_console`, `euphoria_glitter_sparkle`, `grindhouse_1970s_drivein`, `lalaland_twilight_hour`, `cyber_hud_target_lock`, `tokyo_drift_rain_reflection`, `kodachrome_64_classic_slide`, `audio_paranoid_whammy_glitch`, `audio_sun_records_slapback`, `flir_thermal_heatseeker`, `moonrise_kingdom_16mm`, `hologram_interlace_beam`, `audio_808_trap_tube_drive`, `dark_knight_imax_chicago`, `night_hunter_infrared_gen3`, `apple_commercial_clean_luxury`...
 - **Quantum Additions**: `cyberpunk_2077_yellow_hud`, `interstellar_wormhole_warp`, `dune_spice_desert_sun`, `fight_club_subliminal_flash`, `succession_luxury_zoom`, `sincity_neon_rain_noir`, `cyber_biomonitor_heartbeat`, `audio_submarine_sonar_ping`, `audio_gramophone_vinyl_crackle`, `vhs_tracking_loss_distortion`, `acid_trip_rainbow_dispersion`, `anime_action_speedlines`, `matrix_operator_green_terminal`, `champagne_gold_luxury`, `nordic_noir_bleak_cold`, `gameboy_original_4shade`, `golden_dust_particles`, `whip_zoom_down_snap`, `audio_synthwave_phaser`, `white_infinity_cyc`...
 - **Infinite Series**: `bladerunner_2049_amber`, `wes_anderson_symmetry`, `oppenheimer_70mm_monochrome`, `euphoria_neon_purple`, `cyber_digital_corrupter`, `technicolor_3strip_vintage`, `dreamcore_ethereal_bloom`, `audio_lofi_vinyl_beats`, `audio_bass_subwoofer_boost`, `bullet_time_matrix_freeze`, `split_diopter_dual_focus`, `french_new_wave_1960`, `sincity_isolated_red`, `commodore_64_retro`, `angelic_white_dream_glow`, `audio_helium_balloon`...
 - **Titan & Cinema Classics**: `matrix_code_rain_green`, `film_noir_shadows`, `tilt_shift_miniature`, `wong_kar_wai_slow_shutter`, `film_halation_red` (Kodak 500T), `vertigo_dolly_zoom` (Hitchcock Vertigo), `audio_8d_spatial_orbit` (Âm thanh 8D xoay quanh đầu), `anaglyph_3d_cinema`, `bleach_bypass_matrix`, `thermal_infrared_vision`, `night_vision_goggles`, `vintage_8mm_silent_film`, `dynamic_speed_ramp`, `audio_cathedral_reverb`, `cctv_surveillance_cam`, `anime_cel_shading`, `cinematic_teal_orange`, `cyberpunk_neon_city`, `skin_smoothing_soft`, `skin_whitening_brighten`...

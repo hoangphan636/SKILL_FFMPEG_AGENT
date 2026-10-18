@@ -4,6 +4,7 @@ import { CINEMA_20_EFFECTS } from './cinema.js';
 import { TITAN_20_EFFECTS } from './titan.js';
 import { INFINITE_20_EFFECTS } from './infinite.js';
 import { QUANTUM_20_EFFECTS } from './quantum.js';
+import { APEX_20_EFFECTS } from './apex.js';
 
 const BASE_REGISTRY: Record<string, EffectDefinition> = {
   // 1. Color Filters
@@ -357,4 +358,5 @@ export const EFFECT_REGISTRY: Record<string, EffectDefinition> = {
   ...TITAN_20_EFFECTS,
   ...INFINITE_20_EFFECTS,
   ...QUANTUM_20_EFFECTS,
+  ...APEX_20_EFFECTS,
 };
