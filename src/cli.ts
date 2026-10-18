@@ -13,6 +13,7 @@ import { ApexHyperMediaSuite } from './quantum/hyper.js';
 import { OmegaGenesisMediaSuite } from './quantum/omega.js';
 import { SingularityMediaSuite } from './quantum/singularity.js';
 import { OmniverseMediaSuite } from './quantum/omniverse.js';
+import { CelestialMediaSuite } from './quantum/celestial.js';
 import type { EffectCategory } from './effects/schema.js';
 
 const program = new Command();
@@ -1415,6 +1416,402 @@ program
     try {
       const result = await OmniverseMediaSuite.ditherFloor(input, output);
       console.log(`[Success] Dither floor applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+// --- 9.6 CELESTIAL ENTERPRISE SUITE (30 FEATURES) ---
+program
+  .command('resample-audio [options] <input> <output>')
+  .description('Resample and bit-depth upsample audio using SoXR precision engine')
+  .option('-r, --rate <hz>', 'Sample rate in Hz (default: 96000)', (v) => parseInt(v, 10), 96000)
+  .action(async (input: string, output: string, options: { rate: number }) => {
+    try {
+      const result = await CelestialMediaSuite.resampleAudio(input, output, options.rate);
+      console.log(`[Success] Resampled audio in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('extract-dialogue <input> <output>')
+  .description('Extract center channel phantom dialogue vocal stem')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.extractCenterDialogue(input, output);
+      console.log(`[Success] Extracted dialogue in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('extract-ambient-sides <input> <output>')
+  .description('Extract out-of-phase side ambient soundscape stem')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.extractAmbientSides(input, output);
+      console.log(`[Success] Extracted ambient sides in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('fix-rolling-shutter <input> <output>')
+  .description('Correct rolling shutter CMOS sensor wobble and jello artifacts')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.fixRollingShutter(input, output);
+      console.log(`[Success] Corrected rolling shutter in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('de-esser <input> <output>')
+  .description('Tame harsh vocal sibilance and high-frequency microphone distortion')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.deEsser(input, output);
+      console.log(`[Success] Applied de-esser in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('noise-gate [options] <input> <output>')
+  .description('Apply dynamic noise gate to silence microphone background hum')
+  .option('-t, --threshold <db>', 'Threshold in dB (default: -35)', (v) => parseFloat(v), -35)
+  .action(async (input: string, output: string, options: { threshold: number }) => {
+    try {
+      const result = await CelestialMediaSuite.noiseGate(input, output, options.threshold);
+      console.log(`[Success] Noise gate applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('blurhash-frame <input> <outputPng>')
+  .description('Extract ultra-low resolution blurred placeholder frame for web caching')
+  .action(async (input: string, outputPng: string) => {
+    try {
+      const result = await CelestialMediaSuite.blurHashKeyframe(input, outputPng);
+      console.log(`[Success] Blurhash frame generated in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('psychoacoustic-bass <input> <output>')
+  .description('Synthesize psychoacoustic harmonic bass frequencies for small speakers')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.psychoacousticBass(input, output);
+      console.log(`[Success] Psychoacoustic bass applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('mirror-reflection <input> <output>')
+  .description('Create symmetrical cinematic split-axis mirror reflection')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.mirrorReflection(input, output);
+      console.log(`[Success] Mirror reflection created in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('stereo-width-enhance [options] <input> <output>')
+  .description('Enhance stereo imaging width up to 2.5x')
+  .option('-w, --width <multiplier>', 'Width multiplier (default: 1.8)', (v) => parseFloat(v), 1.8)
+  .action(async (input: string, output: string, options: { width: number }) => {
+    try {
+      const result = await CelestialMediaSuite.stereoWidthEnhance(input, output, options.width);
+      console.log(`[Success] Stereo width enhanced in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('despill-green <input> <output>')
+  .description('Suppress green screen color fringing and spill on hair and edges')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.despillGreen(input, output);
+      console.log(`[Success] Green spill suppressed in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('vinyl-needle-drop <input> <output>')
+  .description('Simulate vintage vinyl record needle drop and micro-crackle')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.vinylNeedleDrop(input, output);
+      console.log(`[Success] Vinyl needle drop applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('clarify-micro-contrast <input> <output>')
+  .description('Boost micro-contrast and edge clarity using Contrast Adaptive Sharpening')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.clarifyMicroContrast(input, output);
+      console.log(`[Success] Micro-contrast clarified in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('multiband-compress <input> <output>')
+  .description('Broadcast 3-band multiband dynamic compression leveler')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.multibandCompress(input, output);
+      console.log(`[Success] Multiband compression applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('apply-lut-cube <input> <lutFile> <output>')
+  .description('Apply professional 3D LUT (.cube) color grading look')
+  .action(async (input: string, lutFile: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.applyLutCube(input, lutFile, output);
+      console.log(`[Success] 3D LUT applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('telephone-transducer <input> <output>')
+  .description('Simulate antique carbon microphone telephone speaker frequency bandwidth')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.telephoneTransducer(input, output);
+      console.log(`[Success] Telephone transducer applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('crt-scanlines <input> <output>')
+  .description('Render authentic interlaced cathode-ray CRT television scanlines')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.crtScanlines(input, output);
+      console.log(`[Success] CRT scanlines rendered in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('doppler-shift <input> <output>')
+  .description('Simulate acoustic Doppler frequency shift time-dilation')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.dopplerShift(input, output);
+      console.log(`[Success] Doppler shift applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('smart-denoise <input> <output>')
+  .description('High-quality 3D temporal-spatial noise reduction')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.smartDenoise(input, output);
+      console.log(`[Success] Video denoised in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('subharmonic-doubler <input> <output>')
+  .description('Generate synthetic 1-octave down sub-harmonic bass reinforcement')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.subHarmonicDoubler(input, output);
+      console.log(`[Success] Sub-harmonics doubled in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('smart-pillarbox-916 <input> <output>')
+  .description('Format video for TikTok/Reels with blurred background mirror pillarbox')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.smartPillarbox916(input, output);
+      console.log(`[Success] Smart 9:16 pillarbox created in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('ambient-reverb-wash <input> <output>')
+  .description('Create massive 10-second cinematic ambient reverb wash tail')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.ambientReverbWash(input, output);
+      console.log(`[Success] Ambient reverb wash applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('motion-center-zoom [options] <input> <output>')
+  .description('Apply subtle dynamic center region push-in punch zoom')
+  .option('-z, --zoom <factor>', 'Zoom magnification factor (default: 1.15)', (v) => parseFloat(v), 1.15)
+  .action(async (input: string, output: string, options: { zoom: number }) => {
+    try {
+      const result = await CelestialMediaSuite.motionCenterZoom(input, output, options.zoom);
+      console.log(`[Success] Center zoom applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('binaural-panner <input> <output>')
+  .description('Convert audio to wide binaural 3D headphone soundstage')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.binauralPanner(input, output);
+      console.log(`[Success] Binaural panning applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('invert-negative <input> <output>')
+  .description('Invert video color spectrum to negative X-Ray mode')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.invertNegative(input, output);
+      console.log(`[Success] Color inverted in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('resonant-flanger <input> <output>')
+  .description('Apply dramatic deep jet-engine resonant flanger sweep')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.resonantFlanger(input, output);
+      console.log(`[Success] Resonant flanger applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('edge-sobel <input> <output>')
+  .description('Extract Sobel mathematical gradient edge outlines')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.edgeSobel(input, output);
+      console.log(`[Success] Sobel edges extracted in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('pitch-shift-octave [options] <input> <output>')
+  .description('Shift audio pitch up by exact octave (+12 semitones)')
+  .option('-o, --octave <count>', 'Octave shift count (default: 1)', (v) => parseInt(v, 10), 1)
+  .action(async (input: string, output: string, options: { octave: number }) => {
+    try {
+      const result = await CelestialMediaSuite.pitchShiftOctave(input, output, options.octave);
+      console.log(`[Success] Pitch shifted by octave in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('posterize-pop-art <input> <output>')
+  .description('Quantize color palette into high-impact pop-art posterization')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.posterizePopArt(input, output);
+      console.log(`[Success] Pop-art posterization applied in ${result.durationMs}ms`);
+    } catch (err) {
+      console.error(`[Error] ${(err as Error).message}`);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('true-peak-limiter <input> <output>')
+  .description('Lock audio ceiling to -1.0 dBTP for EBU R128 compliance')
+  .action(async (input: string, output: string) => {
+    try {
+      const result = await CelestialMediaSuite.truePeakLimiter(input, output);
+      console.log(`[Success] True-peak limiter applied in ${result.durationMs}ms`);
     } catch (err) {
       console.error(`[Error] ${(err as Error).message}`);
       process.exit(1);

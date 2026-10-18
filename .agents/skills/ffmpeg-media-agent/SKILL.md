@@ -1,14 +1,14 @@
 ---
 name: ffmpeg-media-agent
-description: "Omniverse Enterprise FFmpeg Media Agent Skill & 270+ Engine Suite on Windows with 360 VR Injection, LLM fMP4 Streaming, Voice Auto-Tune, Audio LTC Generator, Color Scopes, Tone-Mapping, 364 Cinema Effects & AI Vision Bridge."
-version: "17.0.0"
+description: "Celestial Enterprise FFmpeg Media Agent Skill & 300+ Engine Suite on Windows with 360 VR Injection, LLM fMP4 Streaming, Voice Auto-Tune, Audio LTC Generator, Color Scopes, Tone-Mapping, 364 Cinema Effects & AI Vision Bridge."
+version: "18.0.0"
 author: "Lead Staff Systems Architect"
-tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "omega-suite", "singularity-suite", "omniverse-suite", "vr360", "fmp4", "autotune", "prores"]
+tags: ["ffmpeg", "video", "audio", "subtitles", "batch", "transcoding", "auto-bootstrap", "effects-suite", "face-tracking", "gpu-acceleration", "smart-crop", "loudness-norm", "qc", "hls-streaming", "hdr-tonemapping", "cinema-studio", "vmaf-ssim", "deshake", "timecode-burnin", "titan-suite", "infinite-suite", "quantum-suite", "apex-suite", "omega-suite", "singularity-suite", "omniverse-suite", "celestial-suite", "vr360", "fmp4", "autotune", "prores"]
 ---
 
-# Omniverse Enterprise FFmpeg Media Agent Skill & Engine (v17.0)
+# Celestial Enterprise FFmpeg Media Agent Skill & Engine (v18.0)
 
-Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **270+ tính năng & 364 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio tối thượng: từ trích xuất bảng màu thông minh, xem trước lướt nhanh pitch-compensate, đo kiểm pha âm thanh vectơ, khử rung nhấp nháy ánh sáng deflicker, phục hồi âm thanh xén ngọn declip, ánh xạ dải động cao HDR sang SDR, phát hình thẻ màu kiểm định SMPTE, trộn âm vòm 5.1, gắn dải quang sai thấu kính, đo kiểm biểu đồ sóng waveform RGB, đến xuất Apple ProRes 422 HQ / 4444 Alpha, AV1, RTMP Live Broadcast và AI Face Tracking.
+Bộ công cụ Media Engine & AI Agent Skill mạnh nhất thị trường toàn cầu cho **OpenAI Codex** và **Google Antigravity** trên Windows. Trang bị trọn gói **300+ tính năng & 364 hiệu ứng điện ảnh Hollywood**, đưa năng lực xử lý media của AI Agent đạt chuẩn Post-Production Studio tối thượng: từ nâng cấp tần số lấy mẫu âm thanh Hi-Res SoXR, bóc tách rãnh lời thoại trung tâm và âm thanh môi trường xung quanh, khử rung màn trập lăn rolling shutter, cổng nhiễu âm học noise gate, áp dụng bảng màu 3D LUT Cube, nén động đa băng tầng multiband, triệt tiêu viền xanh phông nền despill, đến xuất Apple ProRes 422 HQ / 4444 Alpha, AV1, RTMP Live Broadcast và AI Face Tracking.
 
 ---
 
@@ -22,7 +22,39 @@ Tự động cấu hình PATH, cài đặt Node.js LTS, Gyan FFmpeg Essentials, 
 
 ---
 
-## 2. Toàn Bộ 270+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+## 2. Toàn Bộ 300+ Tính Năng Chuẩn Doanh Nghiệp Quốc Tế
+
+### Nhóm 𝒞: Đột Phá Hậu Kỳ Thần Thánh Studio (Celestial Suite)
+1. **Nâng cấp tần số lấy mẫu Hi-Res 96kHz SoXR (`resample-audio`)**: Bộ lấy mẫu độ chính xác 28-bit chuyển đổi âm thanh chuẩn phòng thu Audiophile.
+2. **Tách rãnh lời thoại trung tâm Phantom Dialogue (`extract-dialogue`)**: Trích xuất kênh đối thoại trung tâm lọc sạch tạp âm hai bên.
+3. **Bóc tách trường âm môi trường Ambient Sides (`extract-ambient-sides`)**: Lấy riêng dải âm vang và tiếng động nền out-of-phase hai bên tai.
+4. **Hiệu chỉnh méo hình màn trập lăn Rolling Shutter (`fix-rolling-shutter`)**: Khử rung lắc jello do cảm biến máy quay lia nhanh.
+5. **Bộ khử tiếng xì xát De-Esser chuyên nghiệp (`de-esser`)**: Tinh chỉnh làm dịu âm xuýt chói tai (s, x, ch) của giọng đọc micro gần.
+6. **Cổng kiểm soát độ ồn động Noise Gate (`noise-gate`)**: Tự động ngắt tiếng micro khi tín hiệu thấp hơn ngưỡng dB xác định.
+7. **Khung hình mờ đệm tải trang BlurHash (`blurhash-frame`)**: Xuất ảnh đại diện siêu nhẹ làm placeholder cho web/ứng dụng di động.
+8. **Tổng hợp dải trầm tâm thính học Psychoacoustic Bass (`psychoacoustic-bass`)**: Tái tạo âm trầm ảo nghe rõ trên loa điện thoại và laptop.
+9. **Phản chiếu đối xứng trục ngang Mirror Reflection (`mirror-reflection`)**: Tạo hiệu ứng gương đối xứng thẩm mỹ phong cách điện ảnh.
+10. **Tăng cường độ rộng âm trường Stereo Width (`stereo-width-enhance`)**: Mở rộng góc phủ âm thanh hai bên tai nghe lên tới 2.5 lần.
+11. **Triệt tiêu phản quang xanh phông Studio Despill (`despill-green`)**: Xóa sạch vệt viền xanh lá bám vào tóc và mép viền nhân vật.
+12. **Mô phỏng hạ kim đĩa than cổ điển Vinyl Needle Drop (`vinyl-needle-drop`)**: Tạo tiếng rào rạo bụi kim đĩa than hoài niệm thập niên 70.
+13. **Làm rõ vi tương phản biên cạnh Micro-Contrast (`clarify-micro-contrast`)**: Thuật toán CAS làm sắc nét từng chi tiết sợi vải, chân tóc.
+14. **Nén âm thanh đa băng tầng Multiband Compressor (`multiband-compress`)**: Cân bằng độc lập 3 dải trầm, trung, cao chuẩn phát thanh FM.
+15. **Áp dụng bảng tra cứu màu 3D LUT Cube (`apply-lut-cube`)**: Tải file LUT màu điện ảnh `.cube` chuyên nghiệp từ DaVinci Resolve.
+16. **Giả lập micro than ống nghe điện thoại cổ (`telephone-transducer`)**: Giới hạn băng thông âm thanh 300Hz-3400Hz phong cách vintage.
+17. **Dòng quét màn hình CRT Interlaced Scanlines (`crt-scanlines`)**: Tái hiện đường quét ngang đan xen của màn hình TV bóng đèn hình cổ.
+18. **Mô phỏng hiệu ứng chuyển dịch âm học Doppler (`doppler-shift`)**: Biến đổi tần số âm thanh trôi dạt theo vận tốc nguồn phát.
+19. **Khử nhiễu thông minh đa chiều Smart Denoise (`smart-denoise`)**: Bộ lọc HQDN3D làm sạch hạt nhiễu video ánh sáng yếu ban đêm.
+20. **Nhân đôi dải siêu trầm quãng tám Sub-Harmonic (`subharmonic-doubler`)**: Sinh tần số trầm hạ 1 quãng tám tạo độ dày cho tiếng kick/bass.
+21. **Đệm viền mờ nghệ thuật chuẩn dọc 9:16 (`smart-pillarbox-916`)**: Chuyển video ngang sang dọc TikTok/Reels với hậu cảnh mờ gương.
+22. **Âm vang ngân dài vô tận Ambient Reverb Wash (`ambient-reverb-wash`)**: Kéo dài đuôi âm vang lên tới 10 giây cho thể loại nhạc thiền, chillout.
+23. **Thu phóng điểm nhấn trung tâm Motion Center Zoom (`motion-center-zoom`)**: Đẩy nhẹ khung hình vào chủ thể trung tâm tạo nhịp điệu sinh động.
+24. **Âm thanh định hướng 3D Binaural Panner (`binaural-panner`)**: Phân tán âm thanh vòng quanh đầu tối ưu cho trải nghiệm tai nghe.
+25. **Âm bản quang phổ X-Ray Invert Negative (`invert-negative`)**: Đảo ngược dải màu video tạo thị giác tia X độc đáo.
+26. **Quét âm phản lực Resonant Jet Flanger (`resonant-flanger`)**: Tiếng rít động cơ phản lực quét qua tần số âm thanh cực đại.
+27. **Phát hiện đường biên viền Sobel Edge (`edge-sobel`)**: Trích xuất đường bao toán học gradient trắng đen phục vụ AI phân tích hình học.
+28. **Dịch chuyển cao độ đúng quãng tám Pitch Octave (`pitch-shift-octave`)**: Tăng hoặc giảm đúng 1 octave (+12 semitones) cho giọng hoạt hình.
+29. **Lượng tử hóa bảng màu Pop-Art Posterize (`posterize-pop-art`)**: Biến đổi video thành tranh vẽ poster màu sắc ấn tượng phong cách Warhol.
+30. **Khóa trần bảo vệ âm lượng chuẩn phát sóng True-Peak Limiter (`true-peak-limiter`)**: Khóa trần -1.0 dBTP ngăn chặn méo tiếng liên mẫu ISP.
 
 ### Nhóm 𝒪: Đột Phá Hậu Kỳ Vô Cực Studio (Omniverse Suite)
 1. **Trích xuất bảng màu điện ảnh 32 màu Palette (`extract-palette`)**: Tạo bảng mã màu visual palette PNG để đối chiếu color grading.
